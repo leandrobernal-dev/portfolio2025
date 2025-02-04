@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -97,17 +98,21 @@ export default function Navigation() {
                         <div className="container mx-auto px-6 py-4">
                             {["About", "Projects", "Experience", "Tech"].map(
                                 (item) => (
-                                    <motion.a
+                                    <motion.div
                                         key={item}
-                                        href={`#${item.toLowerCase()}`}
                                         className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
                                         whileHover={{ x: 5 }}
                                         onClick={() =>
                                             setIsMobileMenuOpen(false)
                                         }
                                     >
-                                        {item}
-                                    </motion.a>
+                                        <Link
+                                            href={`#${item.toLowerCase()}`}
+                                            className="block"
+                                        >
+                                            {item}
+                                        </Link>
+                                    </motion.div>
                                 )
                             )}
                         </div>
