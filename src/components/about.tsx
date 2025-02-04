@@ -37,7 +37,7 @@ export default function About() {
                         <p>
                             In my spare time, I enjoy 3D printing and 3d
                             modeling, or play fingerstyle on my acoustic
-                            guitar🎸.
+                            guitar🎸. I also play online chess♟️.
                         </p>
                     </div>
                 </motion.div>
