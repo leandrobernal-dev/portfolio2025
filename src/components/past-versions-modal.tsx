@@ -14,13 +14,13 @@ const pastVersions = [
         id: 2,
         year: 2024,
         image: "/portfolio.jpg",
-        link: "v2.bernalleandro.com",
+        link: "https://v2.bernalleandro.com/",
     },
     {
         id: 3,
         year: 2025,
         image: "/portfoliov3.png",
-        link: "bernalleandro.com",
+        link: "https://bernalleandro.com/",
     },
 ];
 
