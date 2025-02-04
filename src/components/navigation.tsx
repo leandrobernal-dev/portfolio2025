@@ -30,12 +30,13 @@ export default function Navigation() {
         >
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    <motion.span
+                    <motion.a
+                        href="/"
                         className="text-xl font-bold"
                         whileHover={{ scale: 1.05 }}
                     >
-                        Portfolio
-                    </motion.span>
+                        <img src="/logo.svg" alt="" className="w-10" />
+                    </motion.a>
                     <div className="hidden md:flex space-x-8">
                         {["About", "Projects", "Experience", "Tech"].map(
                             (item) => (
