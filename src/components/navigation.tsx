@@ -98,21 +98,21 @@ export default function Navigation() {
                         <div className="container mx-auto px-6 py-4">
                             {["About", "Projects", "Experience", "Tech"].map(
                                 (item) => (
-                                    <motion.div
+                                    <Link
                                         key={item}
-                                        className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
-                                        whileHover={{ x: 5 }}
+                                        href={`#${item.toLowerCase()}`}
+                                        className="block"
                                         onClick={() =>
                                             setIsMobileMenuOpen(false)
                                         }
                                     >
-                                        <Link
-                                            href={`#${item.toLowerCase()}`}
-                                            className="block"
+                                        <motion.div
+                                            className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                                            whileHover={{ x: 5 }}
                                         >
                                             {item}
-                                        </Link>
-                                    </motion.div>
+                                        </motion.div>
+                                    </Link>
                                 )
                             )}
                         </div>
