@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, MapPin, Pin } from "lucide-react";
+import { ChevronDown, MapPin } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -23,7 +23,7 @@ export default function Hero() {
                     </motion.h1>
                     <div className="w-16 h-px bg-gray-300 mx-auto"></div>
                     <motion.h2
-                        className="text-2xl md:text-4xl text-gray-700 mb-4"
+                        className="text-2xl font-bold md:text-4xl text-gray-700 mb-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
@@ -31,7 +31,7 @@ export default function Hero() {
                         Full Stack Developer
                     </motion.h2>
                     <motion.p
-                        className="text-xl md:text-xl text-gray-500 mb-8 flex gap-1 justify-center"
+                        className="text-lg md:text-xl text-gray-500 mb-8 flex flex-col md:flex-row gap-1 justify-center items-center"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
@@ -52,7 +52,6 @@ export default function Hero() {
                             whileTap={{ scale: 0.95 }}
                         >
                             View My Work
-                            {/* <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-800 transform scale-x-0 transition-transform group-hover:scale-x-100"></span> */}
                             <div className="w-full h-0.5 bg-gray-900 mt-1" />
                         </motion.a>
                     </motion.div>
