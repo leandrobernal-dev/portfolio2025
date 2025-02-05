@@ -114,6 +114,7 @@ export default function TechStack() {
                                         const Icon = tech.icon;
                                         return (
                                             <motion.div
+                                                key={tech.name}
                                                 initial={{
                                                     opacity: 0,
                                                     scale: 0.8,
