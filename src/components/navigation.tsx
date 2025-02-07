@@ -104,9 +104,6 @@ export default function Navigation() {
                                         key={item}
                                         href={`#${item.toLowerCase()}`}
                                         className="block"
-                                        onClick={() =>
-                                            setIsMobileMenuOpen(false)
-                                        }
                                     >
                                         <motion.div
                                             className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
