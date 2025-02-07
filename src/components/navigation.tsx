@@ -5,16 +5,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 export default function Navigation() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+        const handleCloseMobileMenu = () => {
+            if (isMobileMenuOpen) {
+                console.log("click");
+                setIsMobileMenuOpen(false);
+            }
         };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        document.addEventListener("click", handleCloseMobileMenu);
+
+        return () => {
+            document.removeEventListener("click", handleCloseMobileMenu);
+        };
+    }, [isMobileMenuOpen]);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -22,9 +27,7 @@ export default function Navigation() {
 
     return (
         <motion.nav
-            className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-                isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"
-            }`}
+            className={`fixed top-0 w-full z-50 transition-colors duration-300 bg-white/80 backdrop-blur-md`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
@@ -93,7 +96,7 @@ export default function Navigation() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="md:hidden bg-white/80 backdrop-blur-md"
+                        className="md:hidden "
                     >
                         <div className="container mx-auto px-6 py-4">
                             {["About", "Projects", "Experience", "Tech"].map(
