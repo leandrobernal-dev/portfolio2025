@@ -10,7 +10,6 @@ export default function Navigation() {
     useEffect(() => {
         const handleCloseMobileMenu = () => {
             if (isMobileMenuOpen) {
-                console.log("click");
                 setIsMobileMenuOpen(false);
             }
         };
