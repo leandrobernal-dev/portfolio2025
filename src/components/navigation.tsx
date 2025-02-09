@@ -93,14 +93,6 @@ export default function Navigation() {
                                         href={`#${item.toLowerCase()}`}
                                         className="block py-2 text-gray-600 hover:text-[#8B7FD2] transition-colors"
                                         whileHover={{ x: 5 }}
-                                        onClick={(e) => {
-                                            router.push(
-                                                `/#${item.toLowerCase()}`
-                                            );
-                                            setTimeout(() => {
-                                                toggleMobileMenu();
-                                            }, 100);
-                                        }}
                                     >
                                         {item}
                                     </motion.a>
