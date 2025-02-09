@@ -8,19 +8,6 @@ export default function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const router = useRouter();
 
-    useEffect(() => {
-        const handleCloseMobileMenu = () => {
-            if (isMobileMenuOpen) {
-                setIsMobileMenuOpen(false);
-            }
-        };
-        document.addEventListener("click", handleCloseMobileMenu);
-
-        return () => {
-            document.removeEventListener("click", handleCloseMobileMenu);
-        };
-    }, [isMobileMenuOpen]);
-
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
