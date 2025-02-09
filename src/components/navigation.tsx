@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const router = useRouter();
 
     useEffect(() => {
         const handleCloseMobileMenu = () => {
@@ -95,23 +96,27 @@ export default function Navigation() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="md:hidden "
+                        className="md:hidden mobile-menu"
                     >
                         <div className="container mx-auto px-6 py-4">
                             {["About", "Projects", "Experience", "Tech"].map(
                                 (item) => (
-                                    <Link
+                                    <motion.a
                                         key={item}
                                         href={`#${item.toLowerCase()}`}
-                                        className="block"
+                                        className="block py-2 text-gray-600 hover:text-[#8B7FD2] transition-colors"
+                                        whileHover={{ x: 5 }}
+                                        onClick={(e) => {
+                                            router.push(
+                                                `/#${item.toLowerCase()}`
+                                            );
+                                            setTimeout(() => {
+                                                toggleMobileMenu();
+                                            }, 100);
+                                        }}
                                     >
-                                        <motion.div
-                                            className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
-                                            whileHover={{ x: 5 }}
-                                        >
-                                            {item}
-                                        </motion.div>
-                                    </Link>
+                                        {item}
+                                    </motion.a>
                                 )
                             )}
                         </div>
