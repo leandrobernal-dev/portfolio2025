@@ -4,9 +4,16 @@ import { motion } from "framer-motion";
 
 const experiences = [
     {
+        role: "Junior Software Engineer - Contractor",
+        company: "Bidlabs Inc.",
+        period: "2025 - Present",
+        description:
+            "Designed and implemented new features, built, deployed and maintain server.",
+    },
+    {
         role: "Full Stack Engineer",
         company: "Freelance",
-        period: "2023 - Present",
+        period: "2023 - 2025",
         description:
             "Built custom web applications, automated business processes, and optimized website performance while ensuring scalability and user experience.",
     },
@@ -43,7 +50,7 @@ export default function Experience() {
                                 </span>
                             </div>
                             <div className="text-gray-600">
-                                <p className="font-medium mb-2">
+                                <p className="font-semibold mb-2 text-gray-600 tracking-wide uppercase">
                                     {exp.company}
                                 </p>
                                 <p>{exp.description}</p>
