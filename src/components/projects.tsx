@@ -129,7 +129,7 @@ function FeaturedProjectCarousel({
         timeoutRef.current = setTimeout(() => {
             setDirection(1);
             setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
-        }, 5000);
+        }, 8000);
         return () => {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
         };
