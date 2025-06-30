@@ -117,7 +117,10 @@ const featuredProject = {
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <section
+            id="projects"
+            className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50"
+        >
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -130,8 +133,8 @@ export default function Projects() {
                         Featured Work
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        A collection of projects that showcase my skills in full-stack development, 
-                        from concept to deployment.
+                        A collection of projects that showcase my skills in
+                        full-stack development, from concept to deployment.
                     </p>
                 </motion.div>
 
@@ -148,27 +151,40 @@ export default function Projects() {
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400" />
                         <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500" />
                         <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-yellow-200 to-amber-200 rounded-full opacity-15 group-hover:scale-110 transition-transform duration-500" />
-                        
+
                         <div className="flex flex-col lg:flex-row relative z-10">
                             {/* Image Section */}
                             <div className="w-full lg:w-3/5 relative">
                                 <div className="p-8 lg:p-12">
-                                    <Carousel className="w-full">
+                                    <Carousel
+                                        opts={{
+                                            loop: true,
+                                        }}
+                                        className="w-full"
+                                    >
                                         <CarouselContent>
-                                            {featuredProject.images.map((image, index) => (
-                                                <CarouselItem key={index}>
-                                                    <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border-2 border-amber-200 bg-white">
-                                                        <Image
-                                                            src={image}
-                                                            alt={`${featuredProject.title} screenshot ${index + 1}`}
-                                                            fill
-                                                            className="object-contain p-2"
-                                                            priority={index === 0}
-                                                            sizes="(max-width: 768px) 100vw, 60vw"
-                                                        />
-                                                    </div>
-                                                </CarouselItem>
-                                            ))}
+                                            {featuredProject.images.map(
+                                                (image, index) => (
+                                                    <CarouselItem key={index}>
+                                                        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border-2 border-amber-200 bg-white">
+                                                            <Image
+                                                                src={image}
+                                                                alt={`${
+                                                                    featuredProject.title
+                                                                } screenshot ${
+                                                                    index + 1
+                                                                }`}
+                                                                fill
+                                                                className="object-contain p-2"
+                                                                priority={
+                                                                    index === 0
+                                                                }
+                                                                sizes="(max-width: 768px) 100vw, 60vw"
+                                                            />
+                                                        </div>
+                                                    </CarouselItem>
+                                                )
+                                            )}
                                         </CarouselContent>
                                         <CarouselPrevious className="left-4 bg-white/90 hover:bg-white border-amber-200 text-amber-700 hover:text-amber-800" />
                                         <CarouselNext className="right-4 bg-white/90 hover:bg-white border-amber-200 text-amber-700 hover:text-amber-800" />
@@ -185,7 +201,7 @@ export default function Projects() {
                                             Featured Project
                                         </div>
                                     </div>
-                                    
+
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="relative">
                                             <Image
@@ -203,15 +219,15 @@ export default function Projects() {
                                             {featuredProject.title}
                                         </h3>
                                     </div>
-                                    
+
                                     <p className="text-xl text-amber-700 mb-4 font-semibold">
                                         {featuredProject.shortDescription}
                                     </p>
-                                    
+
                                     <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                                         {featuredProject.description}
                                     </p>
-                                    
+
                                     <div className="flex flex-wrap gap-2 mb-8">
                                         {featuredProject.tags.map((tag) => (
                                             <span
@@ -223,7 +239,7 @@ export default function Projects() {
                                         ))}
                                     </div>
                                 </div>
-                                
+
                                 <div className="flex flex-wrap gap-4">
                                     <Button
                                         asChild
@@ -270,7 +286,9 @@ export default function Projects() {
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-8">Other Projects</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-8">
+                        Other Projects
+                    </h3>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -287,7 +305,10 @@ export default function Projects() {
                                 <CardContent className="p-0">
                                     <div className="relative h-48 overflow-hidden">
                                         <Image
-                                            src={project.image || "/placeholder.svg"}
+                                            src={
+                                                project.image ||
+                                                "/placeholder.svg"
+                                            }
                                             alt={project.title}
                                             fill
                                             className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -302,14 +323,16 @@ export default function Projects() {
                                             {project.description}
                                         </p>
                                         <div className="flex flex-wrap gap-2 mb-6">
-                                            {project.tags.slice(0, 3).map((tag) => (
-                                                <span
-                                                    key={tag}
-                                                    className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
+                                            {project.tags
+                                                .slice(0, 3)
+                                                .map((tag) => (
+                                                    <span
+                                                        key={tag}
+                                                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
                                             {project.tags.length > 3 && (
                                                 <span className="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded-md">
                                                     +{project.tags.length - 3}
