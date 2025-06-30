@@ -25,127 +25,141 @@ const technologies = [
         name: "React",
         icon: SiReact,
         category: "Frontend",
-        proficiency: 95,
+        featured: true,
         color: "text-blue-500",
         bgColor: "bg-blue-50",
         borderColor: "border-blue-200",
+        hoverColor: "hover:bg-blue-100",
     },
     {
         name: "Next.js",
         icon: SiNextdotjs,
         category: "Frontend",
-        proficiency: 90,
+        featured: true,
         color: "text-gray-900",
         bgColor: "bg-gray-50",
         borderColor: "border-gray-200",
+        hoverColor: "hover:bg-gray-100",
     },
     {
         name: "TypeScript",
         icon: SiTypescript,
         category: "Frontend",
-        proficiency: 85,
+        featured: false,
         color: "text-blue-600",
         bgColor: "bg-blue-50",
         borderColor: "border-blue-200",
+        hoverColor: "hover:bg-blue-100",
     },
     {
         name: "Tailwind CSS",
         icon: SiTailwindcss,
         category: "Frontend",
-        proficiency: 95,
+        featured: true,
         color: "text-cyan-500",
         bgColor: "bg-cyan-50",
         borderColor: "border-cyan-200",
+        hoverColor: "hover:bg-cyan-100",
     },
     {
         name: "Shadcn UI",
         icon: SiShadcnui,
         category: "Frontend",
-        proficiency: 80,
+        featured: false,
         color: "text-gray-800",
         bgColor: "bg-gray-50",
         borderColor: "border-gray-200",
+        hoverColor: "hover:bg-gray-100",
     },
     {
         name: "Node.js",
         icon: SiNodedotjs,
         category: "Backend",
-        proficiency: 85,
+        featured: false,
         color: "text-green-600",
         bgColor: "bg-green-50",
         borderColor: "border-green-200",
+        hoverColor: "hover:bg-green-100",
     },
     {
         name: "Firebase",
         icon: SiFirebase,
         category: "Backend",
-        proficiency: 80,
+        featured: false,
         color: "text-orange-500",
         bgColor: "bg-orange-50",
         borderColor: "border-orange-200",
+        hoverColor: "hover:bg-orange-100",
     },
     {
         name: "Supabase",
         icon: SiSupabase,
         category: "Backend",
-        proficiency: 85,
+        featured: true,
         color: "text-emerald-600",
         bgColor: "bg-emerald-50",
         borderColor: "border-emerald-200",
+        hoverColor: "hover:bg-emerald-100",
     },
     {
         name: "MongoDB",
         icon: SiMongodb,
         category: "Backend",
-        proficiency: 75,
+        featured: false,
         color: "text-green-700",
         bgColor: "bg-green-50",
         borderColor: "border-green-200",
+        hoverColor: "hover:bg-green-100",
     },
     {
         name: "PostgreSQL",
         icon: SiPostgresql,
         category: "Backend",
-        proficiency: 70,
+        featured: false,
         color: "text-blue-700",
         bgColor: "bg-blue-50",
         borderColor: "border-blue-200",
+        hoverColor: "hover:bg-blue-100",
     },
     {
         name: "GraphQL",
         icon: SiGraphql,
         category: "Backend",
-        proficiency: 65,
+        featured: false,
         color: "text-pink-600",
         bgColor: "bg-pink-50",
         borderColor: "border-pink-200",
+        hoverColor: "hover:bg-pink-100",
     },
     {
         name: "Python",
         icon: SiPython,
         category: "Backend",
-        proficiency: 70,
+        featured: false,
         color: "text-yellow-600",
         bgColor: "bg-yellow-50",
         borderColor: "border-yellow-200",
+        hoverColor: "hover:bg-yellow-100",
     },
     {
         name: "Docker",
         icon: SiDocker,
         category: "DevOps",
-        proficiency: 70,
+        featured: false,
         color: "text-blue-600",
         bgColor: "bg-blue-50",
         borderColor: "border-blue-200",
+        hoverColor: "hover:bg-blue-100",
     },
     {
         name: "Git",
         icon: SiGit,
         category: "DevOps",
-        proficiency: 90,
+        featured: true,
         color: "text-orange-600",
         bgColor: "bg-orange-50",
         borderColor: "border-orange-200",
+        hoverColor: "hover:bg-orange-100",
     },
 ];
 
@@ -194,6 +208,16 @@ export default function TechStack() {
                     {["Frontend", "Backend", "DevOps"].map(
                         (category, categoryIndex) => {
                             const CategoryIcon = categoryIcons[category];
+                            const categoryTechs = technologies.filter(
+                                (tech) => tech.category === category
+                            );
+                            const featuredTechs = categoryTechs.filter(
+                                (tech) => tech.featured
+                            );
+                            const otherTechs = categoryTechs.filter(
+                                (tech) => !tech.featured
+                            );
+
                             return (
                                 <motion.div
                                     key={category}
@@ -229,81 +253,114 @@ export default function TechStack() {
                                                 </div>
                                             </div>
 
-                                            {/* Technologies Grid */}
+                                            {/* Technologies Content */}
                                             <div className="p-8">
-                                                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                                                    {technologies
-                                                        .filter(
-                                                            (tech) =>
-                                                                tech.category ===
-                                                                category
-                                                        )
-                                                        .map((tech, index) => {
-                                                            const Icon = tech.icon;
-                                                            return (
-                                                                <motion.div
-                                                                    key={tech.name}
-                                                                    initial={{
-                                                                        opacity: 0,
-                                                                        scale: 0.8,
-                                                                    }}
-                                                                    whileInView={{
-                                                                        opacity: 1,
-                                                                        scale: 1,
-                                                                    }}
-                                                                    transition={{
-                                                                        duration: 0.4,
-                                                                        delay: index * 0.1,
-                                                                    }}
-                                                                    whileHover={{
-                                                                        scale: 1.05,
-                                                                        y: -5,
-                                                                    }}
-                                                                    viewport={{
-                                                                        once: true,
-                                                                    }}
-                                                                    className="group"
-                                                                >
-                                                                    <div
-                                                                        className={`${tech.bgColor} ${tech.borderColor} border-2 rounded-xl p-4 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:shadow-lg hover:border-opacity-60 relative overflow-hidden`}
+                                                {/* Featured Technologies */}
+                                                {featuredTechs.length > 0 && (
+                                                    <div className="mb-8">
+                                                        <div className="flex items-center gap-2 mb-4">
+                                                            <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                                                            <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+                                                                Primary Technologies
+                                                            </h4>
+                                                        </div>
+                                                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                                                            {featuredTechs.map((tech, index) => {
+                                                                const Icon = tech.icon;
+                                                                return (
+                                                                    <motion.div
+                                                                        key={tech.name}
+                                                                        initial={{
+                                                                            opacity: 0,
+                                                                            scale: 0.8,
+                                                                        }}
+                                                                        whileInView={{
+                                                                            opacity: 1,
+                                                                            scale: 1,
+                                                                        }}
+                                                                        transition={{
+                                                                            duration: 0.4,
+                                                                            delay: index * 0.1,
+                                                                        }}
+                                                                        whileHover={{
+                                                                            scale: 1.05,
+                                                                            y: -5,
+                                                                        }}
+                                                                        viewport={{
+                                                                            once: true,
+                                                                        }}
+                                                                        className="group"
                                                                     >
-                                                                        {/* Proficiency indicator */}
-                                                                        {tech.proficiency >= 90 && (
+                                                                        <div
+                                                                            className={`${tech.bgColor} ${tech.borderColor} ${tech.hoverColor} border-2 rounded-xl p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:shadow-lg hover:border-opacity-60 relative overflow-hidden min-h-[120px]`}
+                                                                        >
                                                                             <div className="absolute top-2 right-2">
                                                                                 <Star className="w-3 h-3 text-yellow-500 fill-current" />
                                                                             </div>
-                                                                        )}
-                                                                        
-                                                                        <Icon
-                                                                            className={`w-8 h-8 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
-                                                                        />
-                                                                        <span className="text-sm font-semibold text-gray-800 text-center">
-                                                                            {tech.name}
-                                                                        </span>
-                                                                        
-                                                                        {/* Proficiency bar */}
-                                                                        <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                                                                            <motion.div
-                                                                                className={`h-1.5 rounded-full bg-gradient-to-r ${categoryColors[category]}`}
-                                                                                initial={{ width: 0 }}
-                                                                                whileInView={{
-                                                                                    width: `${tech.proficiency}%`,
-                                                                                }}
-                                                                                transition={{
-                                                                                    duration: 1,
-                                                                                    delay: index * 0.1 + 0.5,
-                                                                                }}
-                                                                                viewport={{ once: true }}
+                                                                            
+                                                                            <Icon
+                                                                                className={`w-10 h-10 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
                                                                             />
+                                                                            <span className="text-sm font-semibold text-gray-800 text-center">
+                                                                                {tech.name}
+                                                                            </span>
                                                                         </div>
-                                                                        <span className="text-xs text-gray-500 font-medium">
-                                                                            {tech.proficiency}%
-                                                                        </span>
-                                                                    </div>
-                                                                </motion.div>
-                                                            );
-                                                        })}
-                                                </div>
+                                                                    </motion.div>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                {/* Other Technologies */}
+                                                {otherTechs.length > 0 && (
+                                                    <div>
+                                                        <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">
+                                                            Additional Technologies
+                                                        </h4>
+                                                        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+                                                            {otherTechs.map((tech, index) => {
+                                                                const Icon = tech.icon;
+                                                                return (
+                                                                    <motion.div
+                                                                        key={tech.name}
+                                                                        initial={{
+                                                                            opacity: 0,
+                                                                            scale: 0.8,
+                                                                        }}
+                                                                        whileInView={{
+                                                                            opacity: 1,
+                                                                            scale: 1,
+                                                                        }}
+                                                                        transition={{
+                                                                            duration: 0.4,
+                                                                            delay: (featuredTechs.length + index) * 0.1,
+                                                                        }}
+                                                                        whileHover={{
+                                                                            scale: 1.05,
+                                                                            y: -3,
+                                                                        }}
+                                                                        viewport={{
+                                                                            once: true,
+                                                                        }}
+                                                                        className="group"
+                                                                    >
+                                                                        <div
+                                                                            className={`${tech.bgColor} ${tech.borderColor} ${tech.hoverColor} border rounded-lg p-4 flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:shadow-md min-h-[90px]`}
+                                                                        >
+                                                                            <Icon
+                                                                                className={`w-6 h-6 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                                                                            />
+                                                                            <span className="text-xs font-medium text-gray-700 text-center leading-tight">
+                                                                                {tech.name}
+                                                                            </span>
+                                                                        </div>
+                                                                    </motion.div>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
                                         </CardContent>
                                     </Card>
