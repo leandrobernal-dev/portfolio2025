@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import { ExternalLink, Github } from "lucide-react";
@@ -92,17 +93,163 @@ const projects = [
     },
 ];
 
+import { useState } from "react";
+
 const featuredProject = {
     id: 99,
     title: "DisguisMe",
     shortDescription: "One-Click Disposable Identity",
     description:
         "Create fake personas with custom names, emails, and more to stay private when signing up for shady sites. Now with browser extension and email forwarding!",
-    image: "/disguisme_extension_inline.gif",
+    images: [
+        "/disguisme_extension_inline.gif",
+        "/disguisme_screenshot1.png",
+        "/disguisme_screenshot2.png",
+    ],
     githubUrl: "https://github.com/leandrobernal-dev",
     demoUrl: "https://disguis.me",
     tags: ["Next.js", "Tailwind CSS", "Typescript", "Supabase"],
 };
+
+function FeaturedProjectCarousel({
+    images,
+    alt,
+}: {
+    images: string[];
+    alt: string;
+}) {
+    const [current, setCurrent] = useState(0);
+    const [direction, setDirection] = useState(0); // 1 for next, -1 for prev
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    // Auto-advance every 3 seconds
+    useEffect(() => {
+        if (images.length <= 1) return;
+        timeoutRef.current = setTimeout(() => {
+            setDirection(1);
+            setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+        }, 5000);
+        return () => {
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        };
+    }, [current, images.length]);
+
+    const prev = () => {
+        setDirection(-1);
+        setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+    };
+    const next = () => {
+        setDirection(1);
+        setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    };
+
+    // Animation variants for sliding
+    const variants = {
+        enter: (dir: number) => ({
+            x: dir > 0 ? 300 : -300,
+            opacity: 0,
+            position: "absolute" as const,
+        }),
+        center: {
+            x: 0,
+            opacity: 1,
+            position: "relative" as const,
+        },
+        exit: (dir: number) => ({
+            x: dir > 0 ? -300 : 300,
+            opacity: 0,
+            position: "absolute" as const,
+        }),
+    };
+
+    return (
+        <div className="relative w-full h-full flex items-center justify-center p-4 overflow-hidden">
+            <AnimatePresence initial={false} custom={direction}>
+                <motion.div
+                    key={current}
+                    custom={direction}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{
+                        x: { type: "spring", stiffness: 400, damping: 30 },
+                        opacity: { duration: 0.2 },
+                    }}
+                    className="w-full h-full flex items-center justify-center"
+                    style={{ minHeight: 200 }}
+                >
+                    <Image
+                        src={images[current]}
+                        alt={alt}
+                        fill
+                        className="object-contain rounded-xl shadow-lg border-2 border-yellow-300 bg-white"
+                        priority
+                        sizes="(max-width: 768px) 100vw, 40vw"
+                    />
+                </motion.div>
+            </AnimatePresence>
+            {images.length > 1 && (
+                <>
+                    <button
+                        onClick={prev}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-300/80 hover:bg-yellow-400 text-yellow-900 rounded-full p-2 shadow z-20"
+                        aria-label="Previous image"
+                        type="button"
+                    >
+                        <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M13 16l-5-6 5-6"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </button>
+                    <button
+                        onClick={next}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-300/80 hover:bg-yellow-400 text-yellow-900 rounded-full p-2 shadow z-20"
+                        aria-label="Next image"
+                        type="button"
+                    >
+                        <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M7 4l5 6-5 6"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </button>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-20">
+                        {images.map((_, idx) => (
+                            <span
+                                key={idx}
+                                className={`w-2 h-2 rounded-full ${
+                                    idx === current
+                                        ? "bg-yellow-500"
+                                        : "bg-yellow-200"
+                                }`}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
+        </div>
+    );
+}
 
 export default function Projects() {
     return (
@@ -122,15 +269,10 @@ export default function Projects() {
                         <div className="absolute top-0 left-0 w-2 h-full bg-yellow-400 hidden lg:block z-10" />
                         {/* Image Section */}
                         <div className="relative w-full lg:w-2/5 h-64 lg:h-auto flex items-center justify-center bg-yellow-100">
-                            <div className="relative w-full h-full flex items-center justify-center p-4">
-                                <Image
-                                    src={featuredProject.image}
-                                    alt={featuredProject.title}
-                                    fill
-                                    className="object-contain rounded-xl shadow-lg border-2 border-yellow-300 bg-white"
-                                    priority
-                                />
-                            </div>
+                            <FeaturedProjectCarousel
+                                images={featuredProject.images}
+                                alt={featuredProject.title}
+                            />
                         </div>
                         {/* Content Section */}
                         <div className="flex-1 flex flex-col justify-center p-8 lg:p-12">
