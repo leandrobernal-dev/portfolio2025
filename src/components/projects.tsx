@@ -92,11 +92,119 @@ const projects = [
     },
 ];
 
+const featuredProject = {
+    id: 99,
+    title: "DisguisMe",
+    shortDescription: "One-Click Disposable Identity",
+    description:
+        "Create fake personas with custom names, emails, and more to stay private when signing up for shady sites. Now with browser extension and email forwarding!",
+    image: "/disguisme_extension_inline.gif",
+    githubUrl: "https://github.com/leandrobernal-dev",
+    demoUrl: "https://disguis.me",
+    tags: ["Next.js", "Tailwind CSS", "Typescript", "Supabase"],
+};
+
 export default function Projects() {
     return (
         <section id="projects" className="py-20">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl font-bold mb-12">Projects</h2>
+                {/* Featured Project */}
+                <motion.div
+                    className="mb-16"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                    viewport={{ once: true }}
+                >
+                    <Card className="overflow-hidden flex flex-col lg:flex-row h-full shadow-2xl border-0 bg-gradient-to-br from-yellow-50 via-white to-yellow-100 relative">
+                        {/* Decorative Accent */}
+                        <div className="absolute top-0 left-0 w-2 h-full bg-yellow-400 hidden lg:block z-10" />
+                        {/* Image Section */}
+                        <div className="relative w-full lg:w-2/5 h-64 lg:h-auto flex items-center justify-center bg-yellow-100">
+                            <div className="relative w-full h-full flex items-center justify-center p-4">
+                                <Image
+                                    src={featuredProject.image}
+                                    alt={featuredProject.title}
+                                    fill
+                                    className="object-contain rounded-xl shadow-lg border-2 border-yellow-300 bg-white"
+                                    priority
+                                />
+                            </div>
+                        </div>
+                        {/* Content Section */}
+                        <div className="flex-1 flex flex-col justify-center p-8 lg:p-12">
+                            <div className="mb-6">
+                                <span className="inline-block bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1 rounded-full mb-4 shadow">
+                                    <span className="mr-2">⭐</span> Featured
+                                    Project
+                                </span>
+                                <div className="flex items-center gap-3 mb-2">
+                                    <Image
+                                        src="/disguisme.png"
+                                        alt="DisguisMe Logo"
+                                        width={40}
+                                        height={40}
+                                        className="rounded-lg shadow border border-yellow-300 bg-white"
+                                    />
+                                    <h3 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+                                        {featuredProject.title}
+                                    </h3>
+                                </div>
+                                <p className="text-lg text-gray-700 mb-4 font-medium">
+                                    {featuredProject.shortDescription}
+                                </p>
+                                <p className="text-md text-gray-600 mb-6 leading-relaxed">
+                                    {featuredProject.description}
+                                </p>
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {featuredProject.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="px-3 py-1 bg-yellow-200 text-yellow-900 text-xs font-semibold rounded-full shadow-sm"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex flex-wrap gap-4 mt-auto">
+                                <Button
+                                    asChild
+                                    className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold shadow"
+                                    size="lg"
+                                >
+                                    <a
+                                        href={featuredProject.demoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2"
+                                    >
+                                        <ExternalLink size={18} />
+                                        Live Demo
+                                    </a>
+                                </Button>
+                                <Button
+                                    asChild
+                                    variant="outline"
+                                    className="border-yellow-400 text-yellow-900 hover:bg-yellow-100"
+                                    size="lg"
+                                >
+                                    <a
+                                        href={featuredProject.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2"
+                                    >
+                                        <Github size={18} />
+                                        GitHub
+                                    </a>
+                                </Button>
+                            </div>
+                        </div>
+                    </Card>
+                </motion.div>
+                {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((project, index) => (
                         <motion.div
