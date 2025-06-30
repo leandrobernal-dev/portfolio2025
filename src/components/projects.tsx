@@ -105,6 +105,7 @@ const featuredProject = {
         "/disguisme_extension_inline.gif",
         "/disguisme_screenshot1.png",
         "/disguisme_screenshot2.png",
+        "/extension_popup.gif",
     ],
     githubUrl: "https://github.com/leandrobernal-dev",
     demoUrl: "https://disguis.me",
