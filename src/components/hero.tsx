@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown, MapPin, Code, Zap, Heart } from "lucide-react";
-import Image from "next/image";
 
 export default function Hero() {
     return (
@@ -124,7 +123,7 @@ export default function Hero() {
                                     >
                                         Learn More
                                     </motion.a>
-                                </div>
+                                </motion.div>
 
                                 {/* Quick Stats */}
                                 <motion.div
