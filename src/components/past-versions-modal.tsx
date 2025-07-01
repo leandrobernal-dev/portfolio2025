@@ -46,15 +46,15 @@ export default function PastVersionsModal({
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
                         onClick={(e) => e.stopPropagation()}
-                        className="bg-white/80 backdrop-blur-md rounded-lg shadow-xl p-6 w-full max-w-2xl"
+                        className="neuro-container p-6 w-full max-w-2xl"
                     >
                         <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-2xl font-bold">
+                            <h2 className="text-2xl font-bold text-gray-800">
                                 Past Portfolio Versions
                             </h2>
                             <button
                                 onClick={onClose}
-                                className="text-gray-500 hover:text-gray-700"
+                                className="neuro-button p-2 text-gray-600 hover:text-gray-800"
                             >
                                 <X className="w-6 h-6" />
                             </button>
@@ -68,20 +68,24 @@ export default function PastVersionsModal({
                                     rel="noopener noreferrer"
                                     className="block group"
                                 >
-                                    <div className="relative h-40 mb-2 overflow-hidden rounded-lg">
-                                        <Image
-                                            src={
-                                                version.image ||
-                                                "/placeholder.svg"
-                                            }
-                                            alt={`Portfolio version ${version.year}`}
-                                            fill
-                                            className="object-cover transition-transform group-hover:scale-105"
-                                        />
+                                    <div className="neuro-card p-3 hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1">
+                                        <div className="neuro-card-inset p-2 mb-3">
+                                            <div className="relative h-32 overflow-hidden rounded-lg bg-white">
+                                                <Image
+                                                    src={
+                                                        version.image ||
+                                                        "/placeholder.svg"
+                                                    }
+                                                    alt={`Portfolio version ${version.year}`}
+                                                    fill
+                                                    className="object-cover transition-transform group-hover:scale-105"
+                                                />
+                                            </div>
+                                        </div>
+                                        <p className="text-center font-medium text-gray-800">
+                                            v{version.id}
+                                        </p>
                                     </div>
-                                    <p className="text-center font-medium">
-                                        v{version.id}
-                                    </p>
                                 </a>
                             ))}
                         </div>

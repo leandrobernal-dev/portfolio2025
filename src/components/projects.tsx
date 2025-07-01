@@ -119,7 +119,7 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50"
+            className="py-20 neuro-section"
         >
             <div className="container mx-auto px-6">
                 <motion.div
@@ -129,13 +129,15 @@ export default function Projects() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                        Featured Work
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        A collection of projects that showcase my skills in
-                        full-stack development, from concept to deployment.
-                    </p>
+                    <div className="neuro-card p-8 max-w-2xl mx-auto">
+                        <h2 className="text-4xl font-bold mb-4 text-gray-800">
+                            Featured Work
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                            A collection of projects that showcase my skills in
+                            full-stack development, from concept to deployment.
+                        </p>
+                    </div>
                 </motion.div>
 
                 {/* Featured Project */}
@@ -146,16 +148,11 @@ export default function Projects() {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <Card className="overflow-hidden shadow-2xl border-0 bg-gradient-to-br from-amber-50 via-white to-orange-50 relative group hover:shadow-3xl transition-all duration-500">
-                        {/* Decorative Elements */}
-                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400" />
-                        <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-20 group-hover:scale-110 transition-transform duration-500" />
-                        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-yellow-200 to-amber-200 rounded-full opacity-15 group-hover:scale-110 transition-transform duration-500" />
-
+                    <div className="neuro-featured p-8 relative overflow-hidden">
                         <div className="flex flex-col lg:flex-row relative z-10">
                             {/* Image Section */}
                             <div className="w-full lg:w-3/5 relative">
-                                <div className="p-8 lg:p-12">
+                                <div className="p-4 lg:p-8">
                                     <Carousel
                                         opts={{
                                             loop: true,
@@ -166,65 +163,67 @@ export default function Projects() {
                                             {featuredProject.images.map(
                                                 (image, index) => (
                                                     <CarouselItem key={index}>
-                                                        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border-2 border-amber-200 bg-white">
-                                                            <Image
-                                                                src={image}
-                                                                alt={`${
-                                                                    featuredProject.title
-                                                                } screenshot ${
-                                                                    index + 1
-                                                                }`}
-                                                                fill
-                                                                className="object-contain p-2"
-                                                                priority={
-                                                                    index === 0
-                                                                }
-                                                                sizes="(max-width: 768px) 100vw, 60vw"
-                                                            />
+                                                        <div className="neuro-card-inset p-4">
+                                                            <div className="relative aspect-video rounded-xl overflow-hidden bg-white">
+                                                                <Image
+                                                                    src={image}
+                                                                    alt={`${
+                                                                        featuredProject.title
+                                                                    } screenshot ${
+                                                                        index + 1
+                                                                    }`}
+                                                                    fill
+                                                                    className="object-contain p-2"
+                                                                    priority={
+                                                                        index === 0
+                                                                    }
+                                                                    sizes="(max-width: 768px) 100vw, 60vw"
+                                                                />
+                                                            </div>
                                                         </div>
                                                     </CarouselItem>
                                                 )
                                             )}
                                         </CarouselContent>
-                                        <CarouselPrevious className="left-4 bg-white/90 hover:bg-white border-amber-200 text-amber-700 hover:text-amber-800" />
-                                        <CarouselNext className="right-4 bg-white/90 hover:bg-white border-amber-200 text-amber-700 hover:text-amber-800" />
+                                        <CarouselPrevious className="left-4 neuro-button border-0" />
+                                        <CarouselNext className="right-4 neuro-button border-0" />
                                     </Carousel>
                                 </div>
                             </div>
 
                             {/* Content Section */}
-                            <div className="flex-1 flex flex-col justify-center p-8 lg:p-12 lg:pl-8">
+                            <div className="flex-1 flex flex-col justify-center p-4 lg:p-8">
                                 <div className="mb-6">
                                     <div className="flex items-center gap-2 mb-4">
-                                        <div className="flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-400 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                                            <Star className="w-4 h-4 fill-current" />
-                                            Featured Project
+                                        <div className="neuro-card flex items-center gap-2 px-4 py-2">
+                                            <Star className="w-4 h-4 text-yellow-600 fill-current" />
+                                            <span className="text-sm font-bold text-gray-800">Featured Project</span>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className="relative">
+                                        <div className="neuro-card p-2 relative">
                                             <Image
                                                 src="/disguisme.png"
                                                 alt="DisguisMe Logo"
-                                                width={48}
-                                                height={48}
-                                                className="rounded-xl shadow-md border-2 border-amber-200 bg-white"
+                                                width={40}
+                                                height={40}
+                                                className="rounded-lg"
                                             />
-                                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full flex items-center justify-center">
+                                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-500 rounded-full flex items-center justify-center">
                                                 <Sparkles className="w-2 h-2 text-white" />
                                             </div>
                                         </div>
-                                        <h3 className="text-3xl lg:text-4xl font-black text-gray-900 tracking-tight">
+                                        <h3 className="text-3xl lg:text-4xl font-black text-gray-800 tracking-tight">
                                             {featuredProject.title}
                                         </h3>
                                     </div>
 
-                                    <p className="text-xl text-amber-700 mb-4 font-semibold">
+                                    <p className="text-xl text-gray-700 mb-4 font-semibold">
                                         {featuredProject.shortDescription}
                                     </p>
 
-                                    <p className="text-gray-700 mb-6 leading-relaxed text-lg">
+                                    <p className="text-gray-600 mb-6 leading-relaxed text-lg">
                                         {featuredProject.description}
                                     </p>
 
@@ -232,7 +231,7 @@ export default function Projects() {
                                         {featuredProject.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-sm font-medium rounded-full border border-amber-200 shadow-sm"
+                                                className="neuro-card px-3 py-1 text-gray-700 text-sm font-medium"
                                             >
                                                 {tag}
                                             </span>
@@ -243,7 +242,6 @@ export default function Projects() {
                                 <div className="flex flex-wrap gap-4">
                                     <Button
                                         asChild
-                                        className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                                         size="lg"
                                     >
                                         <a
@@ -259,7 +257,6 @@ export default function Projects() {
                                     <Button
                                         asChild
                                         variant="outline"
-                                        className="border-2 border-amber-300 text-amber-700 hover:bg-amber-50 hover:border-amber-400 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
                                         size="lg"
                                     >
                                         <a
@@ -275,7 +272,7 @@ export default function Projects() {
                                 </div>
                             </div>
                         </div>
-                    </Card>
+                    </div>
                 </motion.div>
 
                 {/* Other Projects */}
@@ -286,9 +283,11 @@ export default function Projects() {
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                        Other Projects
-                    </h3>
+                    <div className="neuro-card p-6 max-w-md">
+                        <h3 className="text-2xl font-bold text-gray-800">
+                            Other Projects
+                        </h3>
+                    </div>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -301,22 +300,23 @@ export default function Projects() {
                             viewport={{ once: true }}
                             className="group"
                         >
-                            <Card className="overflow-hidden h-full hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white group-hover:-translate-y-2">
+                            <Card className="overflow-hidden h-full hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
                                 <CardContent className="p-0">
-                                    <div className="relative h-48 overflow-hidden">
-                                        <Image
-                                            src={
-                                                project.image ||
-                                                "/placeholder.svg"
-                                            }
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    <div className="neuro-card-inset p-3 m-4">
+                                        <div className="relative h-40 overflow-hidden rounded-xl bg-white">
+                                            <Image
+                                                src={
+                                                    project.image ||
+                                                    "/placeholder.svg"
+                                                }
+                                                alt={project.title}
+                                                fill
+                                                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                            />
+                                        </div>
                                     </div>
                                     <div className="p-6">
-                                        <h4 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">
+                                        <h4 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-gray-900 transition-colors">
                                             {project.title}
                                         </h4>
                                         <p className="text-sm text-gray-600 mb-4 line-clamp-3">
@@ -328,13 +328,13 @@ export default function Projects() {
                                                 .map((tag) => (
                                                     <span
                                                         key={tag}
-                                                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium"
+                                                        className="neuro-card px-2 py-1 text-gray-600 text-xs font-medium"
                                                     >
                                                         {tag}
                                                     </span>
                                                 ))}
                                             {project.tags.length > 3 && (
-                                                <span className="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded-md">
+                                                <span className="neuro-card px-2 py-1 text-gray-500 text-xs">
                                                     +{project.tags.length - 3}
                                                 </span>
                                             )}
@@ -344,7 +344,7 @@ export default function Projects() {
                                                 asChild
                                                 variant="outline"
                                                 size="sm"
-                                                className="flex-1 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition-colors"
+                                                className="flex-1"
                                             >
                                                 <a
                                                     href={project.demoUrl}
@@ -360,7 +360,7 @@ export default function Projects() {
                                                 asChild
                                                 variant="outline"
                                                 size="sm"
-                                                className="flex-1 hover:bg-gray-50 hover:border-gray-400 transition-colors"
+                                                className="flex-1"
                                             >
                                                 <a
                                                     href={project.githubUrl}
