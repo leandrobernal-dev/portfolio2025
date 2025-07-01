@@ -10,97 +10,225 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Neumorphism Custom Styles */
+/* Enhanced Neumorphism with Gradients and Varied Depths */
 .neuro-container {
-    background: #f0f0f3;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-    border-radius: 20px;
+    background: linear-gradient(145deg, #f5f5f8, #e8e8eb);
+    box-shadow: 
+        20px 20px 40px rgba(174, 174, 192, 0.4),
+        -20px -20px 40px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .neuro-card {
-    background: #f0f0f3;
-    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+    background: linear-gradient(145deg, #f2f2f5, #e5e5e8);
+    box-shadow: 
+        8px 8px 20px rgba(174, 174, 192, 0.25),
+        -8px -8px 20px rgba(255, 255, 255, 0.9),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .neuro-card-inset {
-    background: #f0f0f3;
-    box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
+    background: linear-gradient(145deg, #e8e8eb, #f2f2f5);
+    box-shadow: 
+        inset 6px 6px 12px rgba(174, 174, 192, 0.2),
+        inset -6px -6px 12px rgba(255, 255, 255, 0.8),
+        0 1px 3px rgba(174, 174, 192, 0.1);
     border-radius: 16px;
+    border: 1px solid rgba(174, 174, 192, 0.1);
 }
 
 .neuro-button {
-    background: #f0f0f3;
-    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #f2f2f5, #e8e8eb);
+    box-shadow: 
+        6px 6px 16px rgba(174, 174, 192, 0.2),
+        -6px -6px 16px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.neuro-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .neuro-button:hover {
-    box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+    background: linear-gradient(145deg, #f5f5f8, #eaeaed);
+    box-shadow: 
+        4px 4px 12px rgba(174, 174, 192, 0.15),
+        -4px -4px 12px rgba(255, 255, 255, 0.9),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
 }
 
+.neuro-button:hover::before {
+    opacity: 1;
+}
+
 .neuro-button:active {
-    box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+    background: linear-gradient(145deg, #e8e8eb, #f2f2f5);
+    box-shadow: 
+        inset 3px 3px 8px rgba(174, 174, 192, 0.2),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.8);
     transform: translateY(0);
 }
 
 .neuro-input {
-    background: #f0f0f3;
-    box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+    background: linear-gradient(145deg, #e8e8eb, #f2f2f5);
+    box-shadow: 
+        inset 6px 6px 12px rgba(174, 174, 192, 0.2),
+        inset -6px -6px 12px rgba(255, 255, 255, 0.8);
     border-radius: 12px;
-    border: none;
+    border: 1px solid rgba(174, 174, 192, 0.1);
+    transition: all 0.3s ease;
 }
 
 .neuro-input:focus {
-    box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
+    background: linear-gradient(145deg, #e5e5e8, #f0f0f3);
+    box-shadow: 
+        inset 8px 8px 16px rgba(174, 174, 192, 0.15),
+        inset -8px -8px 16px rgba(255, 255, 255, 0.9),
+        0 0 0 2px rgba(99, 102, 241, 0.1);
     outline: none;
 }
 
 .neuro-nav {
-    background: rgba(240, 240, 243, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(190, 190, 190, 0.3);
+    background: linear-gradient(145deg, rgba(245, 245, 248, 0.95), rgba(232, 232, 235, 0.95));
+    backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 
+        0 8px 32px rgba(174, 174, 192, 0.15),
+        0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(174, 174, 192, 0.1);
 }
 
 .neuro-section {
-    background: linear-gradient(135deg, #f0f0f3 0%, #e8e8eb 100%);
+    background: linear-gradient(135deg, #f8f8fb 0%, #f0f0f3 50%, #e8e8eb 100%);
+    position: relative;
+}
+
+.neuro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .neuro-tech-card {
-    background: #f0f0f3;
-    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
-    border-radius: 16px;
-    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #f2f2f5, #e8e8eb);
+    box-shadow: 
+        6px 6px 16px rgba(174, 174, 192, 0.2),
+        -6px -6px 16px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.neuro-tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
 }
 
 .neuro-tech-card:hover {
-    box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
-    transform: translateY(-2px);
+    background: linear-gradient(145deg, #f5f5f8, #eaeaed);
+    box-shadow: 
+        12px 12px 24px rgba(174, 174, 192, 0.15),
+        -12px -12px 24px rgba(255, 255, 255, 0.9),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
 }
 
 .neuro-featured {
-    background: linear-gradient(135deg, #f5f5f8 0%, #ebebee 100%);
-    box-shadow: 20px 20px 40px #bebebe, -20px -20px 40px #ffffff;
-    border-radius: 24px;
+    background: linear-gradient(145deg, #f8f8fb, #eaeaed);
+    box-shadow: 
+        24px 24px 48px rgba(174, 174, 192, 0.2),
+        -24px -24px 48px rgba(255, 255, 255, 0.9),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.neuro-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+/* Subtle depth variations */
+.neuro-shallow {
+    background: linear-gradient(145deg, #f5f5f8, #eaeaed);
+    box-shadow: 
+        3px 3px 8px rgba(174, 174, 192, 0.15),
+        -3px -3px 8px rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+}
+
+.neuro-medium {
+    background: linear-gradient(145deg, #f2f2f5, #e8e8eb);
+    box-shadow: 
+        6px 6px 16px rgba(174, 174, 192, 0.2),
+        -6px -6px 16px rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+}
+
+.neuro-deep {
+    background: linear-gradient(145deg, #f0f0f3, #e5e5e8);
+    box-shadow: 
+        12px 12px 24px rgba(174, 174, 192, 0.25),
+        -12px -12px 24px rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
 }
 
 @layer base {
     :root {
-        --background: 240 240 243;
+        --background: 248 248 251;
         --foreground: 60 60 67;
-        --card: 240 240 243;
+        --card: 248 248 251;
         --card-foreground: 60 60 67;
-        --popover: 240 240 243;
+        --popover: 248 248 251;
         --popover-foreground: 60 60 67;
         --primary: 60 60 67;
-        --primary-foreground: 240 240 243;
-        --secondary: 232 232 235;
+        --primary-foreground: 248 248 251;
+        --secondary: 240 240 243;
         --secondary-foreground: 60 60 67;
-        --muted: 232 232 235;
+        --muted: 240 240 243;
         --muted-foreground: 120 120 127;
-        --accent: 232 232 235;
+        --accent: 240 240 243;
         --accent-foreground: 60 60 67;
         --destructive: 239 68 68;
         --destructive-foreground: 248 250 252;
@@ -147,67 +275,134 @@ body {
         @apply border-border;
     }
     body {
-        @apply bg-[#f0f0f3] text-foreground;
+        @apply bg-[#f8f8fb] text-foreground;
     }
 }
 
-/* Dark mode neumorphism */
+/* Enhanced Dark mode neumorphism */
 .dark .neuro-container {
-    background: #2a2a2e;
-    box-shadow: 20px 20px 60px #1e1e21, -20px -20px 60px #36363b;
+    background: linear-gradient(145deg, #2f2f33, #26262a);
+    box-shadow: 
+        20px 20px 40px rgba(16, 16, 18, 0.4),
+        -20px -20px 40px rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-card {
-    background: #2a2a2e;
-    box-shadow: 8px 8px 16px #1e1e21, -8px -8px 16px #36363b;
+    background: linear-gradient(145deg, #2a2a2e, #25252a);
+    box-shadow: 
+        8px 8px 20px rgba(16, 16, 18, 0.3),
+        -8px -8px 20px rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-card-inset {
-    background: #2a2a2e;
-    box-shadow: inset 8px 8px 16px #1e1e21, inset -8px -8px 16px #36363b;
+    background: linear-gradient(145deg, #25252a, #2a2a2e);
+    box-shadow: 
+        inset 6px 6px 12px rgba(16, 16, 18, 0.3),
+        inset -6px -6px 12px rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-button {
-    background: #2a2a2e;
-    box-shadow: 6px 6px 12px #1e1e21, -6px -6px 12px #36363b;
+    background: linear-gradient(145deg, #2a2a2e, #25252a);
+    box-shadow: 
+        6px 6px 16px rgba(16, 16, 18, 0.3),
+        -6px -6px 16px rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-button:hover {
-    box-shadow: 4px 4px 8px #1e1e21, -4px -4px 8px #36363b;
+    background: linear-gradient(145deg, #2f2f33, #28282c);
+    box-shadow: 
+        4px 4px 12px rgba(16, 16, 18, 0.2),
+        -4px -4px 12px rgba(54, 54, 59, 0.9);
 }
 
 .dark .neuro-button:active {
-    box-shadow: inset 4px 4px 8px #1e1e21, inset -4px -4px 8px #36363b;
+    background: linear-gradient(145deg, #25252a, #2a2a2e);
+    box-shadow: 
+        inset 3px 3px 8px rgba(16, 16, 18, 0.3),
+        inset -3px -3px 8px rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-input {
-    background: #2a2a2e;
-    box-shadow: inset 6px 6px 12px #1e1e21, inset -6px -6px 12px #36363b;
+    background: linear-gradient(145deg, #25252a, #2a2a2e);
+    box-shadow: 
+        inset 6px 6px 12px rgba(16, 16, 18, 0.3),
+        inset -6px -6px 12px rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-input:focus {
-    box-shadow: inset 8px 8px 16px #1e1e21, inset -8px -8px 16px #36363b;
+    background: linear-gradient(145deg, #28282c, #2d2d31);
+    box-shadow: 
+        inset 8px 8px 16px rgba(16, 16, 18, 0.2),
+        inset -8px -8px 16px rgba(54, 54, 59, 0.9);
 }
 
 .dark .neuro-nav {
-    background: rgba(42, 42, 46, 0.95);
-    box-shadow: 0 8px 32px rgba(30, 30, 33, 0.5);
+    background: linear-gradient(145deg, rgba(47, 47, 51, 0.95), rgba(38, 38, 42, 0.95));
+    box-shadow: 
+        0 8px 32px rgba(16, 16, 18, 0.5),
+        0 1px 0 rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-section {
-    background: linear-gradient(135deg, #2a2a2e 0%, #25252a 100%);
+    background: linear-gradient(135deg, #2a2a2e 0%, #25252a 50%, #20202a 100%);
 }
 
 .dark .neuro-tech-card {
-    background: #2a2a2e;
-    box-shadow: 6px 6px 12px #1e1e21, -6px -6px 12px #36363b;
+    background: linear-gradient(145deg, #2a2a2e, #25252a);
+    box-shadow: 
+        6px 6px 16px rgba(16, 16, 18, 0.3),
+        -6px -6px 16px rgba(54, 54, 59, 0.8);
 }
 
 .dark .neuro-tech-card:hover {
-    box-shadow: 10px 10px 20px #1e1e21, -10px -10px 20px #36363b;
+    background: linear-gradient(145deg, #2f2f33, #28282c);
+    box-shadow: 
+        12px 12px 24px rgba(16, 16, 18, 0.2),
+        -12px -12px 24px rgba(54, 54, 59, 0.9);
 }
 
 .dark .neuro-featured {
-    background: linear-gradient(135deg, #2f2f33 0%, #26262a 100%);
-    box-shadow: 20px 20px 40px #1e1e21, -20px -20px 40px #36363b;
+    background: linear-gradient(145deg, #2f2f33, #28282c);
+    box-shadow: 
+        24px 24px 48px rgba(16, 16, 18, 0.3),
+        -24px -24px 48px rgba(54, 54, 59, 0.9);
+}
+
+/* Improved text contrast */
+.text-enhanced {
+    color: #4a4a52;
+    font-weight: 500;
+}
+
+.dark .text-enhanced {
+    color: #e8e8eb;
+}
+
+/* Subtle animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced focus states */
+.neuro-button:focus-visible {
+    outline: 2px solid rgba(99, 102, 241, 0.5);
+    outline-offset: 2px;
+}
+
+/* Improved accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .neuro-button,
+    .neuro-card,
+    .neuro-tech-card {
+        transition: none;
+    }
+    
+    .float-animation {
+        animation: none;
+    }
 }
