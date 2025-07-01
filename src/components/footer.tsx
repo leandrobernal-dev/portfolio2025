@@ -74,7 +74,7 @@ export default function Footer() {
                             </h3>
                             <Button
                                 variant="outline"
-                                className="gap-2"
+                                className="gap-2 neuro-btn"
                                 onClick={() => setIsModalOpen(true)}
                             >
                                 <Clock className="w-4 h-4" />

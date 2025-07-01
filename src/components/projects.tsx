@@ -242,7 +242,11 @@ export default function Projects() {
                                 </div>
 
                                 <div className="flex flex-wrap gap-4">
-                                    <Button asChild size="lg">
+                                    <Button
+                                        asChild
+                                        size="lg"
+                                        className="neuro-btn"
+                                    >
                                         <a
                                             href={featuredProject.demoUrl}
                                             target="_blank"
@@ -253,7 +257,12 @@ export default function Projects() {
                                             Live Demo
                                         </a>
                                     </Button>
-                                    <Button asChild variant="outline" size="lg">
+                                    <Button
+                                        className="neuro-btn"
+                                        asChild
+                                        variant="outline"
+                                        size="lg"
+                                    >
                                         <a
                                             href={featuredProject.githubUrl}
                                             target="_blank"
@@ -339,7 +348,7 @@ export default function Projects() {
                                                 asChild
                                                 variant="outline"
                                                 size="sm"
-                                                className="flex-1"
+                                                className="flex-1 neuro-btn"
                                             >
                                                 <a
                                                     href={project.demoUrl}
@@ -355,7 +364,7 @@ export default function Projects() {
                                                 asChild
                                                 variant="outline"
                                                 size="sm"
-                                                className="flex-1"
+                                                className="flex-1 neuro-btn"
                                             >
                                                 <a
                                                     href={project.githubUrl}
