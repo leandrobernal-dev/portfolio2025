@@ -56,11 +56,8 @@ const experiences = [
 
 export default function Experience() {
     return (
-        <section
-            id="experience"
-            className="py-20 neuro-section"
-        >
-            <div className="container mx-auto px-6">
+        <section id="experience" className="py-20 neuro-section">
+            <div className="container mx-auto px-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +95,12 @@ export default function Experience() {
                             >
                                 {/* Timeline Dot */}
                                 <div className="absolute left-6 top-8 w-6 h-6 neuro-card z-10 hidden md:flex items-center justify-center">
-                                    <div className={`w-3 h-3 rounded-full ${exp.color.replace('text-', 'bg-')}`}></div>
+                                    <div
+                                        className={`w-3 h-3 rounded-full ${exp.color.replace(
+                                            "text-",
+                                            "bg-"
+                                        )}`}
+                                    ></div>
                                 </div>
 
                                 <Card className="ml-0 md:ml-20 overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
@@ -116,7 +118,7 @@ export default function Experience() {
                                                     </span>
                                                 </div>
                                             </div>
-                                            
+
                                             <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-gray-600">
                                                 <div className="flex items-center gap-2">
                                                     <Building2 className="w-4 h-4" />
@@ -144,21 +146,28 @@ export default function Experience() {
                                             <p className="text-gray-700 mb-4 leading-relaxed">
                                                 {exp.description}
                                             </p>
-                                            
+
                                             <div>
                                                 <h4 className="text-sm font-semibold text-gray-800 mb-3 uppercase tracking-wide">
                                                     Key Highlights
                                                 </h4>
                                                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                                    {exp.highlights.map((highlight, idx) => (
-                                                        <li
-                                                            key={idx}
-                                                            className="flex items-center gap-2 text-sm text-gray-600"
-                                                        >
-                                                            <div className={`w-2 h-2 rounded-full ${exp.color.replace('text-', 'bg-')}`}></div>
-                                                            {highlight}
-                                                        </li>
-                                                    ))}
+                                                    {exp.highlights.map(
+                                                        (highlight, idx) => (
+                                                            <li
+                                                                key={idx}
+                                                                className="flex items-center gap-2 text-sm text-gray-600"
+                                                            >
+                                                                <div
+                                                                    className={`w-2 h-2 rounded-full ${exp.color.replace(
+                                                                        "text-",
+                                                                        "bg-"
+                                                                    )}`}
+                                                                ></div>
+                                                                {highlight}
+                                                            </li>
+                                                        )
+                                                    )}
                                                 </ul>
                                             </div>
                                         </div>

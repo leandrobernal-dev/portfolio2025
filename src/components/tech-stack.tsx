@@ -135,11 +135,8 @@ const categoryDescriptions = {
 
 export default function TechStack() {
     return (
-        <section
-            id="tech"
-            className="py-20 neuro-section"
-        >
-            <div className="container mx-auto px-6">
+        <section id="tech" className="py-20 neuro-section">
+            <div className="container mx-auto px-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -152,8 +149,9 @@ export default function TechStack() {
                             Technology Stack
                         </h2>
                         <p className="text-lg text-gray-600">
-                            The tools and technologies I use to bring ideas to life,
-                            from frontend interfaces to backend infrastructure.
+                            The tools and technologies I use to bring ideas to
+                            life, from frontend interfaces to backend
+                            infrastructure.
                         </p>
                     </div>
                 </motion.div>
@@ -196,7 +194,11 @@ export default function TechStack() {
                                                             {category}
                                                         </h3>
                                                         <p className="text-gray-600 text-sm">
-                                                            {categoryDescriptions[category]}
+                                                            {
+                                                                categoryDescriptions[
+                                                                    category
+                                                                ]
+                                                            }
                                                         </p>
                                                     </div>
                                                 </div>
@@ -210,51 +212,64 @@ export default function TechStack() {
                                                         <div className="flex items-center gap-2 mb-4">
                                                             <Star className="w-4 h-4 text-yellow-600 fill-current" />
                                                             <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
-                                                                Primary Technologies
+                                                                Primary
+                                                                Technologies
                                                             </h4>
                                                         </div>
                                                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                                                            {featuredTechs.map((tech, index) => {
-                                                                const Icon = tech.icon;
-                                                                return (
-                                                                    <motion.div
-                                                                        key={tech.name}
-                                                                        initial={{
-                                                                            opacity: 0,
-                                                                            scale: 0.8,
-                                                                        }}
-                                                                        whileInView={{
-                                                                            opacity: 1,
-                                                                            scale: 1,
-                                                                        }}
-                                                                        transition={{
-                                                                            duration: 0.4,
-                                                                            delay: index * 0.1,
-                                                                        }}
-                                                                        whileHover={{
-                                                                            scale: 1.05,
-                                                                            y: -5,
-                                                                        }}
-                                                                        viewport={{
-                                                                            once: true,
-                                                                        }}
-                                                                        className="group"
-                                                                    >
-                                                                        <div className="neuro-tech-card p-6 flex flex-col items-center justify-center gap-3 min-h-[120px] relative">
-                                                                            <div className="absolute top-2 right-2">
-                                                                                <Star className="w-3 h-3 text-yellow-600 fill-current" />
+                                                            {featuredTechs.map(
+                                                                (
+                                                                    tech,
+                                                                    index
+                                                                ) => {
+                                                                    const Icon =
+                                                                        tech.icon;
+                                                                    return (
+                                                                        <motion.div
+                                                                            key={
+                                                                                tech.name
+                                                                            }
+                                                                            initial={{
+                                                                                opacity: 0,
+                                                                                scale: 0.8,
+                                                                            }}
+                                                                            whileInView={{
+                                                                                opacity: 1,
+                                                                                scale: 1,
+                                                                            }}
+                                                                            transition={{
+                                                                                duration: 0.4,
+                                                                                delay:
+                                                                                    index *
+                                                                                    0.1,
+                                                                            }}
+                                                                            whileHover={{
+                                                                                scale: 1.05,
+                                                                                y: -5,
+                                                                            }}
+                                                                            viewport={{
+                                                                                once: true,
+                                                                            }}
+                                                                            className="group"
+                                                                        >
+                                                                            <div className="neuro-tech-card p-6 flex flex-col items-center justify-center gap-3 min-h-[120px] relative">
+                                                                                <div className="absolute top-2 right-2">
+                                                                                    <Star className="w-3 h-3 text-yellow-600 fill-current" />
+                                                                                </div>
+
+                                                                                <Icon
+                                                                                    className={`w-10 h-10 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                                                                                />
+                                                                                <span className="text-sm font-semibold text-gray-800 text-center">
+                                                                                    {
+                                                                                        tech.name
+                                                                                    }
+                                                                                </span>
                                                                             </div>
-                                                                            
-                                                                            <Icon
-                                                                                className={`w-10 h-10 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
-                                                                            />
-                                                                            <span className="text-sm font-semibold text-gray-800 text-center">
-                                                                                {tech.name}
-                                                                            </span>
-                                                                        </div>
-                                                                    </motion.div>
-                                                                );
-                                                            })}
+                                                                        </motion.div>
+                                                                    );
+                                                                }
+                                                            )}
                                                         </div>
                                                     </div>
                                                 )}
@@ -263,46 +278,60 @@ export default function TechStack() {
                                                 {otherTechs.length > 0 && (
                                                     <div>
                                                         <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">
-                                                            Additional Technologies
+                                                            Additional
+                                                            Technologies
                                                         </h4>
                                                         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-                                                            {otherTechs.map((tech, index) => {
-                                                                const Icon = tech.icon;
-                                                                return (
-                                                                    <motion.div
-                                                                        key={tech.name}
-                                                                        initial={{
-                                                                            opacity: 0,
-                                                                            scale: 0.8,
-                                                                        }}
-                                                                        whileInView={{
-                                                                            opacity: 1,
-                                                                            scale: 1,
-                                                                        }}
-                                                                        transition={{
-                                                                            duration: 0.4,
-                                                                            delay: (featuredTechs.length + index) * 0.1,
-                                                                        }}
-                                                                        whileHover={{
-                                                                            scale: 1.05,
-                                                                            y: -3,
-                                                                        }}
-                                                                        viewport={{
-                                                                            once: true,
-                                                                        }}
-                                                                        className="group"
-                                                                    >
-                                                                        <div className="neuro-tech-card p-4 flex flex-col items-center justify-center gap-2 min-h-[90px]">
-                                                                            <Icon
-                                                                                className={`w-6 h-6 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
-                                                                            />
-                                                                            <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                                                                                {tech.name}
-                                                                            </span>
-                                                                        </div>
-                                                                    </motion.div>
-                                                                );
-                                                            })}
+                                                            {otherTechs.map(
+                                                                (
+                                                                    tech,
+                                                                    index
+                                                                ) => {
+                                                                    const Icon =
+                                                                        tech.icon;
+                                                                    return (
+                                                                        <motion.div
+                                                                            key={
+                                                                                tech.name
+                                                                            }
+                                                                            initial={{
+                                                                                opacity: 0,
+                                                                                scale: 0.8,
+                                                                            }}
+                                                                            whileInView={{
+                                                                                opacity: 1,
+                                                                                scale: 1,
+                                                                            }}
+                                                                            transition={{
+                                                                                duration: 0.4,
+                                                                                delay:
+                                                                                    (featuredTechs.length +
+                                                                                        index) *
+                                                                                    0.1,
+                                                                            }}
+                                                                            whileHover={{
+                                                                                scale: 1.05,
+                                                                                y: -3,
+                                                                            }}
+                                                                            viewport={{
+                                                                                once: true,
+                                                                            }}
+                                                                            className="group"
+                                                                        >
+                                                                            <div className="neuro-tech-card p-4 flex flex-col items-center justify-center gap-2 min-h-[90px]">
+                                                                                <Icon
+                                                                                    className={`w-6 h-6 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                                                                                />
+                                                                                <span className="text-xs font-medium text-gray-700 text-center leading-tight">
+                                                                                    {
+                                                                                        tech.name
+                                                                                    }
+                                                                                </span>
+                                                                            </div>
+                                                                        </motion.div>
+                                                                    );
+                                                                }
+                                                            )}
                                                         </div>
                                                     </div>
                                                 )}

@@ -12,6 +12,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const projects = [
     {
@@ -117,11 +118,8 @@ const featuredProject = {
 
 export default function Projects() {
     return (
-        <section
-            id="projects"
-            className="py-20 neuro-section"
-        >
-            <div className="container mx-auto px-6">
+        <section id="projects" className="py-20 neuro-section">
+            <div className="container mx-auto px-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -157,7 +155,7 @@ export default function Projects() {
                                         opts={{
                                             loop: true,
                                         }}
-                                        className="w-full"
+                                        plugins={[Autoplay({ delay: 8000 })]}
                                     >
                                         <CarouselContent>
                                             {featuredProject.images.map(
@@ -170,12 +168,14 @@ export default function Projects() {
                                                                     alt={`${
                                                                         featuredProject.title
                                                                     } screenshot ${
-                                                                        index + 1
+                                                                        index +
+                                                                        1
                                                                     }`}
                                                                     fill
                                                                     className="object-contain p-2"
                                                                     priority={
-                                                                        index === 0
+                                                                        index ===
+                                                                        0
                                                                     }
                                                                     sizes="(max-width: 768px) 100vw, 60vw"
                                                                 />
@@ -185,8 +185,8 @@ export default function Projects() {
                                                 )
                                             )}
                                         </CarouselContent>
-                                        <CarouselPrevious className="left-4 neuro-button border-0" />
-                                        <CarouselNext className="right-4 neuro-button border-0" />
+                                        <CarouselPrevious />
+                                        <CarouselNext />
                                     </Carousel>
                                 </div>
                             </div>
@@ -197,7 +197,9 @@ export default function Projects() {
                                     <div className="flex items-center gap-2 mb-4">
                                         <div className="neuro-card flex items-center gap-2 px-4 py-2">
                                             <Star className="w-4 h-4 text-yellow-600 fill-current" />
-                                            <span className="text-sm font-bold text-gray-800">Featured Project</span>
+                                            <span className="text-sm font-bold text-gray-800">
+                                                Featured Project
+                                            </span>
                                         </div>
                                     </div>
 
@@ -240,10 +242,7 @@ export default function Projects() {
                                 </div>
 
                                 <div className="flex flex-wrap gap-4">
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                    >
+                                    <Button asChild size="lg">
                                         <a
                                             href={featuredProject.demoUrl}
                                             target="_blank"
@@ -254,11 +253,7 @@ export default function Projects() {
                                             Live Demo
                                         </a>
                                     </Button>
-                                    <Button
-                                        asChild
-                                        variant="outline"
-                                        size="lg"
-                                    >
+                                    <Button asChild variant="outline" size="lg">
                                         <a
                                             href={featuredProject.githubUrl}
                                             target="_blank"

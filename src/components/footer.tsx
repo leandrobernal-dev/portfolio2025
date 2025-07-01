@@ -11,12 +11,14 @@ export default function Footer() {
 
     return (
         <footer className="py-12 neuro-section">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-2">
                 <div className="neuro-container p-8">
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {/* Links */}
                         <div>
-                            <h3 className="text-lg font-semibold mb-4 text-gray-800">Connect</h3>
+                            <h3 className="text-lg font-semibold mb-4 text-gray-800">
+                                Connect
+                            </h3>
                             <div className="space-y-3">
                                 <motion.a
                                     href="https://github.com/leandrobernal-dev"
@@ -50,7 +52,7 @@ export default function Footer() {
                                 Quick Links
                             </h3>
                             <div className="space-y-3">
-                                {["About", "Projects", "Experience", "Tech"].map(
+                                {["Projects", "Experience", "Tech"].map(
                                     (item) => (
                                         <motion.a
                                             key={item}
@@ -83,8 +85,8 @@ export default function Footer() {
 
                     <div className="mt-12 pt-8 border-t border-gray-300 text-center text-gray-600">
                         <p>
-                            © {new Date().getFullYear()} Leandro Bernal. All rights
-                            reserved.
+                            © {new Date().getFullYear()} Leandro Bernal. All
+                            rights reserved.
                         </p>
                     </div>
                 </div>

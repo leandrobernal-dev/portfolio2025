@@ -10,23 +10,25 @@ export default function Navigation() {
 
     useEffect(() => {
         // Check for saved theme preference or default to light mode
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
             setIsDark(true);
-            document.documentElement.classList.add('dark');
+            document.documentElement.classList.add("dark");
         }
     }, []);
 
     const toggleDarkMode = () => {
         setIsDark(!isDark);
         if (!isDark) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
         } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
         }
     };
 
@@ -41,7 +43,7 @@ export default function Navigation() {
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="container mx-auto px-6 py-4">
+            <div className="container mx-auto px-2 py-4">
                 <div className="flex items-center justify-between">
                     <motion.a
                         href="/"
@@ -52,22 +54,20 @@ export default function Navigation() {
                             <img src="/logo.svg" alt="" className="w-8 h-8" />
                         </div>
                     </motion.a>
-                    
+
                     <div className="hidden md:flex items-center space-x-2">
-                        {["About", "Projects", "Experience", "Tech"].map(
-                            (item) => (
-                                <motion.a
-                                    key={item}
-                                    href={`#${item.toLowerCase()}`}
-                                    className="neuro-button px-5 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium text-sm"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    {item}
-                                </motion.a>
-                            )
-                        )}
-                        
+                        {["Projects", "Experience", "Tech"].map((item) => (
+                            <motion.a
+                                key={item}
+                                href={`#${item.toLowerCase()}`}
+                                className="neuro-button px-5 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium text-sm"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                {item}
+                            </motion.a>
+                        ))}
+
                         {/* Dark Mode Toggle */}
                         <motion.button
                             onClick={toggleDarkMode}
@@ -88,7 +88,7 @@ export default function Navigation() {
                             </motion.div>
                         </motion.button>
                     </div>
-                    
+
                     <div className="md:hidden flex items-center gap-2">
                         {/* Mobile Dark Mode Toggle */}
                         <motion.button
@@ -109,9 +109,9 @@ export default function Navigation() {
                                 )}
                             </motion.div>
                         </motion.button>
-                        
-                        <button 
-                            className="neuro-button p-2" 
+
+                        <button
+                            className="neuro-button p-2"
                             onClick={toggleMobileMenu}
                         >
                             <motion.div
@@ -157,19 +157,17 @@ export default function Navigation() {
                         className="md:hidden neuro-card-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
-                            {["About", "Projects", "Experience", "Tech"].map(
-                                (item) => (
-                                    <motion.a
-                                        key={item}
-                                        href={`#${item.toLowerCase()}`}
-                                        className="block neuro-button p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
-                                        whileHover={{ x: 5 }}
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                        {item}
-                                    </motion.a>
-                                )
-                            )}
+                            {["Projects", "Experience", "Tech"].map((item) => (
+                                <motion.a
+                                    key={item}
+                                    href={`#${item.toLowerCase()}`}
+                                    className="block neuro-button p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
+                                    whileHover={{ x: 5 }}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {item}
+                                </motion.a>
+                            ))}
                         </div>
                     </motion.div>
                 )}

@@ -1,5 +1,4 @@
 import Hero from "@/components/hero";
-import About from "@/components/about";
 import Projects from "@/components/projects";
 import Experience from "@/components/experience";
 import TechStack from "@/components/tech-stack";
@@ -11,7 +10,6 @@ export default function Home() {
         <main className="min-h-screen bg-[#f0f0f3]">
             <Navigation />
             <Hero />
-            <About />
             <Projects />
             <Experience />
             <TechStack />
