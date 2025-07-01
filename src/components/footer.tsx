@@ -12,7 +12,7 @@ export default function Footer() {
     return (
         <footer className="py-12 neuro-section">
             <div className="container mx-auto px-2">
-                <div className="neuro-container p-8">
+                <div className="neuro-base p-8">
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {/* Links */}
                         <div>
@@ -24,7 +24,7 @@ export default function Footer() {
                                     href="https://github.com/leandrobernal-dev"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="neuro-button flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors p-3"
+                                    className="neuro-btn flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors p-3"
                                     whileHover={{ x: 5 }}
                                 >
                                     <Github className="w-5 h-5" />
@@ -33,7 +33,7 @@ export default function Footer() {
 
                                 <motion.a
                                     href="https://www.upwork.com/freelancers/~01a704d9fb8d180d89"
-                                    className="neuro-button flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors p-3"
+                                    className="neuro-btn flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors p-3"
                                     whileHover={{ x: 5 }}
                                 >
                                     <img
@@ -57,7 +57,7 @@ export default function Footer() {
                                         <motion.a
                                             key={item}
                                             href={`#${item.toLowerCase()}`}
-                                            className="neuro-button block text-gray-700 hover:text-gray-900 transition-colors p-3 text-center"
+                                            className="neuro-btn block text-gray-700 hover:text-gray-900 transition-colors p-3 text-center"
                                             whileHover={{ x: 5 }}
                                         >
                                             {item}

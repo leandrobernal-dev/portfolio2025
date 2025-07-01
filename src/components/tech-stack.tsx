@@ -181,10 +181,10 @@ export default function TechStack() {
                                     }}
                                     viewport={{ once: true }}
                                 >
-                                    <Card className="overflow-hidden">
+                                    <Card className="neuro-card overflow-hidden">
                                         <CardContent className="p-0">
                                             {/* Category Header */}
-                                            <div className="neuro-card-inset p-6 m-4">
+                                            <div className="neuro-inset p-6 m-4">
                                                 <div className="flex items-center gap-4">
                                                     <div className="neuro-card p-3">
                                                         <CategoryIcon className="w-8 h-8 text-gray-700" />
@@ -252,7 +252,7 @@ export default function TechStack() {
                                                                             }}
                                                                             className="group"
                                                                         >
-                                                                            <div className="neuro-tech-card p-6 flex flex-col items-center justify-center gap-3 min-h-[120px] relative">
+                                                                            <div className="neuro-tech p-6 flex flex-col items-center justify-center gap-3 min-h-[120px] relative">
                                                                                 <div className="absolute top-2 right-2">
                                                                                     <Star className="w-3 h-3 text-yellow-600 fill-current" />
                                                                                 </div>
@@ -318,7 +318,7 @@ export default function TechStack() {
                                                                             }}
                                                                             className="group"
                                                                         >
-                                                                            <div className="neuro-tech-card p-4 flex flex-col items-center justify-center gap-2 min-h-[90px]">
+                                                                            <div className="neuro-tech p-4 flex flex-col items-center justify-center gap-2 min-h-[90px]">
                                                                                 <Icon
                                                                                     className={`w-6 h-6 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
                                                                                 />

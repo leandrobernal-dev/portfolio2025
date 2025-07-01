@@ -60,7 +60,7 @@ export default function Navigation() {
                             <motion.a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
-                                className="neuro-button px-5 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium text-sm"
+                                className="neuro-btn px-5 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium text-sm"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -71,7 +71,7 @@ export default function Navigation() {
                         {/* Dark Mode Toggle */}
                         <motion.button
                             onClick={toggleDarkMode}
-                            className="dark-toggle p-3 ml-2"
+                            className="neuro-toggle p-3 ml-2"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -93,7 +93,7 @@ export default function Navigation() {
                         {/* Mobile Dark Mode Toggle */}
                         <motion.button
                             onClick={toggleDarkMode}
-                            className="dark-toggle p-2"
+                            className="neuro-toggle p-2"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -111,7 +111,7 @@ export default function Navigation() {
                         </motion.button>
 
                         <button
-                            className="neuro-button p-2"
+                            className="neuro-btn p-2"
                             onClick={toggleMobileMenu}
                         >
                             <motion.div
@@ -154,14 +154,14 @@ export default function Navigation() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="md:hidden neuro-card-inset mx-6 mb-4"
+                        className="md:hidden neuro-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
                             {["Projects", "Experience", "Tech"].map((item) => (
                                 <motion.a
                                     key={item}
                                     href={`#${item.toLowerCase()}`}
-                                    className="block neuro-button p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
+                                    className="block neuro-btn p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
                                     whileHover={{ x: 5 }}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >

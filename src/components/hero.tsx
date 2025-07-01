@@ -13,7 +13,7 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="max-w-6xl mx-auto"
                 >
-                    <div className="hero-main-card p-8 lg:p-12 relative overflow-hidden">
+                    <div className="neuro-hero-main p-8 lg:p-12 relative overflow-hidden">
                         {/* Subtle background decoration */}
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
 
@@ -46,7 +46,7 @@ export default function Hero() {
                                 <div className="flex flex-wrap gap-4">
                                     <motion.a
                                         href="#projects"
-                                        className="accent-blue inline-flex items-center gap-2 px-6 py-3 text-white font-semibold tracking-wide rounded-xl"
+                                        className="neuro-accent-blue inline-flex items-center gap-2 px-6 py-3 text-white font-semibold tracking-wide rounded-xl"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
@@ -63,10 +63,10 @@ export default function Hero() {
                                 transition={{ delay: 0.4, duration: 0.6 }}
                                 className="space-y-4"
                             >
-                                <div className="hero-content-card p-6 relative overflow-hidden">
+                                <div className="neuro-hero-content p-6 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                                     <div className="flex items-start gap-3">
-                                        <div className="neuro-medium p-2 mt-1 float-animation accent-blue">
+                                        <div className="neuro-medium p-2 mt-1 float-animation neuro-accent-blue">
                                             <Code className="w-5 h-5 text-white" />
                                         </div>
                                         <div className="text-left flex-1">
@@ -91,11 +91,11 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                <div className="hero-content-card p-6 relative overflow-hidden">
+                                <div className="neuro-hero-content p-6 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                                     <div className="flex items-start gap-3">
                                         <div
-                                            className="neuro-medium p-2 mt-1 float-animation accent-purple"
+                                            className="neuro-medium p-2 mt-1 float-animation neuro-accent-purple"
                                             style={{ animationDelay: "2s" }}
                                         >
                                             <Zap className="w-5 h-5 text-white" />
@@ -124,7 +124,7 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                <div className="hero-content-card p-6 relative overflow-hidden">
+                                <div className="neuro-hero-content p-6 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                                     <div className="flex items-start gap-3">
                                         <div

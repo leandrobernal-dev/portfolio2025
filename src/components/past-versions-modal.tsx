@@ -46,7 +46,7 @@ export default function PastVersionsModal({
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
                         onClick={(e) => e.stopPropagation()}
-                        className="neuro-container p-6 w-full max-w-2xl"
+                        className="neuro-base p-6 w-full max-w-2xl"
                     >
                         <div className="flex justify-between items-center mb-4">
                             <h2 className="text-2xl font-bold text-gray-800">
@@ -54,7 +54,7 @@ export default function PastVersionsModal({
                             </h2>
                             <button
                                 onClick={onClose}
-                                className="neuro-button p-2 text-gray-600 hover:text-gray-800"
+                                className="neuro-btn p-2 text-gray-600 hover:text-gray-800"
                             >
                                 <X className="w-6 h-6" />
                             </button>
@@ -69,7 +69,7 @@ export default function PastVersionsModal({
                                     className="block group"
                                 >
                                     <div className="neuro-card p-3 hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1">
-                                        <div className="neuro-card-inset p-2 mb-3">
+                                        <div className="neuro-inset p-2 mb-3">
                                             <div className="relative h-32 overflow-hidden rounded-lg bg-white">
                                                 <Image
                                                     src={

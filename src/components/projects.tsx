@@ -161,7 +161,7 @@ export default function Projects() {
                                             {featuredProject.images.map(
                                                 (image, index) => (
                                                     <CarouselItem key={index}>
-                                                        <div className="neuro-card-inset p-4">
+                                                        <div className="neuro-inset p-4">
                                                             <div className="relative aspect-video rounded-xl overflow-hidden bg-white">
                                                                 <Image
                                                                     src={image}
@@ -295,9 +295,9 @@ export default function Projects() {
                             viewport={{ once: true }}
                             className="group"
                         >
-                            <Card className="overflow-hidden h-full hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
+                            <Card className="neuro-card overflow-hidden h-full hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
                                 <CardContent className="p-0">
-                                    <div className="neuro-card-inset p-3 m-4">
+                                    <div className="neuro-inset p-3 m-4">
                                         <div className="relative h-40 overflow-hidden rounded-xl bg-white">
                                             <Image
                                                 src={

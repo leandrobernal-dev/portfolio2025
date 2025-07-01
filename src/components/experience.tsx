@@ -79,7 +79,7 @@ export default function Experience() {
                 <div className="max-w-4xl mx-auto">
                     <div className="relative">
                         {/* Timeline Line */}
-                        <div className="absolute left-8 top-0 bottom-0 w-1 neuro-card-inset hidden md:block"></div>
+                        <div className="absolute left-8 top-0 bottom-0 w-1 neuro-inset hidden md:block"></div>
 
                         {experiences.map((exp, index) => (
                             <motion.div
@@ -103,10 +103,10 @@ export default function Experience() {
                                     ></div>
                                 </div>
 
-                                <Card className="ml-0 md:ml-20 overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
+                                <Card className="neuro-card ml-0 md:ml-20 overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
                                     <CardContent className="p-0">
                                         {/* Header */}
-                                        <div className="neuro-card-inset p-6 m-4">
+                                        <div className="neuro-inset p-6 m-4">
                                             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
                                                 <h3 className="text-xl font-bold text-gray-800">
                                                     {exp.role}
