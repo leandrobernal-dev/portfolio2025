@@ -12,7 +12,7 @@ export default function Navigation() {
         // Check for saved theme preference or default to light mode
         const savedTheme = localStorage.getItem("theme");
         const prefersDark = window.matchMedia(
-            "(prefers-color-scheme: dark)"
+            "(prefers-color-scheme: light)"
         ).matches;
 
         if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
@@ -51,7 +51,11 @@ export default function Navigation() {
                         whileHover={{ scale: 1.05 }}
                     >
                         <div className="neuro-card p-3">
-                            <img src="/logo.svg" alt="" className="w-8 h-8 logo-invert" />
+                            <img
+                                src="/logo.svg"
+                                alt=""
+                                className="w-8 h-8 logo-invert"
+                            />
                         </div>
                     </motion.a>
 
