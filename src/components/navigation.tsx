@@ -66,7 +66,7 @@ export default function Navigation() {
                     </motion.a>
 
                     <div className="hidden md:flex items-center space-x-2">
-                        {["Work", "About", "Tech"].map((item) => (
+                        {["About", "Work", "Experience", "Tech"].map((item) => (
                             <motion.a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
@@ -167,17 +167,21 @@ export default function Navigation() {
                         className="md:hidden neuro-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
-                            {["Work", "About", "tech"].map((item) => (
-                                <motion.a
-                                    key={item}
-                                    href={`#${item.toLowerCase()}`}
-                                    className="block neuro-btn p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
-                                    whileHover={{ x: 5 }}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    {item}
-                                </motion.a>
-                            ))}
+                            {["About", "Work", "Experience", "tech"].map(
+                                (item) => (
+                                    <motion.a
+                                        key={item}
+                                        href={`#${item.toLowerCase()}`}
+                                        className="block neuro-btn p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
+                                        whileHover={{ x: 5 }}
+                                        onClick={() =>
+                                            setIsMobileMenuOpen(false)
+                                        }
+                                    >
+                                        {item}
+                                    </motion.a>
+                                )
+                            )}
                         </div>
                     </motion.div>
                 )}
