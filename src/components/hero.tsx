@@ -107,7 +107,7 @@ export default function Hero() {
                             transition={{ delay: 0.6, duration: 0.8 }}
                             className="text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight text-gradient leading-none mb-6"
                         >
-                            Full Stack
+                            Full Stack Developer
                             <br />
                             <span className="relative">
                                 Developer
