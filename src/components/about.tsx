@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Zap, Heart, Guitar, ChessKnight, Printer } from "lucide-react";
+import { Code, Zap, Heart, Guitar, ChevronRight as ChessKnight, Printer } from "lucide-react";
 
 export default function About() {
     return (
