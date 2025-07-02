@@ -285,141 +285,208 @@ body {
     }
 }
 
-/* Dark mode neumorphism */
+/* Dark mode neumorphism - Enhanced Colors */
 .dark {
-    background: #1e1e1e;
+    background: #0f0f0f;
 }
 
 @layer utilities {
     .dark .neuro-base {
-        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
         box-shadow: 
-            20px 20px 60px rgba(0, 0, 0, 0.5),
-            -20px -20px 60px rgba(60, 60, 60, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+            20px 20px 60px rgba(0, 0, 0, 0.8),
+            -20px -20px 60px rgba(40, 40, 40, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .dark .neuro-card {
-        background: linear-gradient(145deg, #252525, #1f1f1f);
+        background: linear-gradient(145deg, #1f1f1f, #171717);
         box-shadow: 
-            12px 12px 24px rgba(0, 0, 0, 0.4),
-            -12px -12px 24px rgba(60, 60, 60, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+            12px 12px 24px rgba(0, 0, 0, 0.6),
+            -12px -12px 24px rgba(45, 45, 45, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .dark .neuro-inset {
-        background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+        background: linear-gradient(145deg, #141414, #1c1c1c);
         box-shadow: 
-            inset 8px 8px 16px rgba(0, 0, 0, 0.4),
-            inset -8px -8px 16px rgba(60, 60, 60, 0.1),
-            0 2px 4px rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(0, 0, 0, 0.2);
+            inset 8px 8px 16px rgba(0, 0, 0, 0.7),
+            inset -8px -8px 16px rgba(40, 40, 40, 0.2),
+            0 2px 4px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(0, 0, 0, 0.3);
     }
 
     .dark .neuro-btn {
-        background: linear-gradient(145deg, #252525, #1f1f1f);
+        background: linear-gradient(145deg, #1f1f1f, #171717);
         box-shadow: 
-            8px 8px 16px rgba(0, 0, 0, 0.4),
-            -8px -8px 16px rgba(60, 60, 60, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+            8px 8px 16px rgba(0, 0, 0, 0.6),
+            -8px -8px 16px rgba(45, 45, 45, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .dark .neuro-btn::before {
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
     }
 
     .dark .neuro-btn:hover {
-        background: linear-gradient(145deg, #2a2a2a, #222222);
+        background: linear-gradient(145deg, #242424, #1a1a1a);
         box-shadow: 
-            6px 6px 12px rgba(0, 0, 0, 0.3),
-            -6px -6px 12px rgba(60, 60, 60, 0.15),
+            6px 6px 12px rgba(0, 0, 0, 0.5),
+            -6px -6px 12px rgba(50, 50, 50, 0.25),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .dark .neuro-btn:active {
-        background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+        background: linear-gradient(145deg, #171717, #1c1c1c);
         box-shadow: 
-            inset 4px 4px 8px rgba(0, 0, 0, 0.4),
-            inset -4px -4px 8px rgba(60, 60, 60, 0.1);
+            inset 4px 4px 8px rgba(0, 0, 0, 0.7),
+            inset -4px -4px 8px rgba(40, 40, 40, 0.2);
     }
 
     .dark .neuro-input {
-        background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+        background: linear-gradient(145deg, #141414, #1c1c1c);
         box-shadow: 
-            inset 8px 8px 16px rgba(0, 0, 0, 0.4),
-            inset -8px -8px 16px rgba(60, 60, 60, 0.1);
-        border: 1px solid rgba(0, 0, 0, 0.2);
+            inset 8px 8px 16px rgba(0, 0, 0, 0.7),
+            inset -8px -8px 16px rgba(40, 40, 40, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.3);
     }
 
     .dark .neuro-input:focus {
-        background: linear-gradient(145deg, #1c1c1c, #272727);
+        background: linear-gradient(145deg, #121212, #191919);
         box-shadow: 
-            inset 10px 10px 20px rgba(0, 0, 0, 0.3),
-            inset -10px -10px 20px rgba(60, 60, 60, 0.15),
-            0 0 0 3px rgba(163, 191, 250, 0.3);
+            inset 10px 10px 20px rgba(0, 0, 0, 0.6),
+            inset -10px -10px 20px rgba(45, 45, 45, 0.25),
+            0 0 0 3px rgba(99, 102, 241, 0.4);
     }
 
     .dark .neuro-nav {
-        background: linear-gradient(145deg, rgba(42, 42, 42, 0.95), rgba(26, 26, 26, 0.95));
+        background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(13, 13, 13, 0.95));
         box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.5),
-            0 1px 0 rgba(60, 60, 60, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            0 8px 32px rgba(0, 0, 0, 0.8),
+            0 1px 0 rgba(40, 40, 40, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     }
 
     .dark .neuro-section {
-        background: linear-gradient(135deg, #1e1e1e 0%, #1a1a1a 50%, #161616 100%);
+        background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 50%, #050505 100%);
+    }
+
+    .dark .neuro-section::before {
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
     }
 
     .dark .neuro-tech {
-        background: linear-gradient(145deg, #252525, #1f1f1f);
+        background: linear-gradient(145deg, #1f1f1f, #171717);
         box-shadow: 
-            8px 8px 20px rgba(0, 0, 0, 0.4),
-            -8px -8px 20px rgba(60, 60, 60, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+            8px 8px 20px rgba(0, 0, 0, 0.6),
+            -8px -8px 20px rgba(45, 45, 45, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .dark .neuro-tech::before {
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     }
 
     .dark .neuro-tech:hover {
-        background: linear-gradient(145deg, #2a2a2a, #222222);
+        background: linear-gradient(145deg, #242424, #1a1a1a);
         box-shadow: 
-            16px 16px 32px rgba(0, 0, 0, 0.3),
-            -16px -16px 32px rgba(60, 60, 60, 0.15),
+            16px 16px 32px rgba(0, 0, 0, 0.5),
+            -16px -16px 32px rgba(50, 50, 50, 0.25),
             inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .dark .neuro-featured {
-        background: linear-gradient(145deg, #2a2a2a, #222222);
+        background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
         box-shadow: 
-            28px 28px 56px rgba(0, 0, 0, 0.4),
-            -28px -28px 56px rgba(60, 60, 60, 0.1),
-            inset 0 2px 0 rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+            28px 28px 56px rgba(0, 0, 0, 0.8),
+            -28px -28px 56px rgba(40, 40, 40, 0.3),
+            inset 0 2px 0 rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dark .neuro-featured::before {
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     }
 
     .dark .neuro-hero-main {
-        background: linear-gradient(145deg, #2a2a2a, #222222);
+        background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
         box-shadow: 
-            24px 24px 48px rgba(0, 0, 0, 0.4),
-            -24px -24px 48px rgba(60, 60, 60, 0.1),
-            inset 0 2px 0 rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+            24px 24px 48px rgba(0, 0, 0, 0.8),
+            -24px -24px 48px rgba(40, 40, 40, 0.3),
+            inset 0 2px 0 rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .dark .neuro-hero-content {
-        background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+        background: linear-gradient(145deg, #141414, #1c1c1c);
         box-shadow: 
-            inset 8px 8px 16px rgba(0, 0, 0, 0.4),
-            inset -8px -8px 16px rgba(60, 60, 60, 0.1),
-            0 2px 4px rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(0, 0, 0, 0.2);
+            inset 8px 8px 16px rgba(0, 0, 0, 0.7),
+            inset -8px -8px 16px rgba(40, 40, 40, 0.2),
+            0 2px 4px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(0, 0, 0, 0.3);
     }
 
     .dark .neuro-toggle {
-        background: linear-gradient(145deg, #252525, #1f1f1f);
+        background: linear-gradient(145deg, #1f1f1f, #171717);
         box-shadow: 
-            6px 6px 12px rgba(0, 0, 0, 0.4),
-            -6px -6px 12px rgba(60, 60, 60, 0.1);
+            6px 6px 12px rgba(0, 0, 0, 0.6),
+            -6px -6px 12px rgba(45, 45, 45, 0.2);
+    }
+
+    /* Dark mode depth variations */
+    .dark .neuro-shallow {
+        background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+        box-shadow: 
+            4px 4px 8px rgba(0, 0, 0, 0.5),
+            -4px -4px 8px rgba(40, 40, 40, 0.2);
+    }
+
+    .dark .neuro-medium {
+        background: linear-gradient(145deg, #1f1f1f, #171717);
+        box-shadow: 
+            8px 8px 16px rgba(0, 0, 0, 0.6),
+            -8px -8px 16px rgba(45, 45, 45, 0.2);
+    }
+
+    .dark .neuro-deep {
+        background: linear-gradient(145deg, #141414, #0a0a0a);
+        box-shadow: 
+            16px 16px 32px rgba(0, 0, 0, 0.7),
+            -16px -16px 32px rgba(35, 35, 35, 0.25);
+    }
+
+    /* Dark mode accent colors - Enhanced */
+    .dark .neuro-accent-blue {
+        background: linear-gradient(145deg, #4f46e5, #3730a3);
+        color: white;
+        box-shadow: 
+            8px 8px 16px rgba(79, 70, 229, 0.3),
+            -8px -8px 16px rgba(99, 102, 241, 0.1);
+    }
+
+    .dark .neuro-accent-purple {
+        background: linear-gradient(145deg, #8b5cf6, #7c3aed);
+        color: white;
+        box-shadow: 
+            8px 8px 16px rgba(139, 92, 246, 0.3),
+            -8px -8px 16px rgba(168, 85, 247, 0.1);
+    }
+
+    .dark .neuro-accent-blue:hover {
+        background: linear-gradient(145deg, #5b21b6, #4c1d95);
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    .dark .neuro-accent-purple:hover {
+        background: linear-gradient(145deg, #9333ea, #7e22ce);
+        transform: translateY(-2px) scale(1.02);
     }
 }
 
@@ -452,24 +519,24 @@ body {
         --radius: 0.75rem;
     }
     .dark {
-        --background: 30 30 30;
-        --foreground: 250 250 250;
-        --card: 30 30 30;
-        --card-foreground: 250 250 250;
-        --popover: 30 30 30;
-        --popover-foreground: 250 250 250;
-        --primary: 250 250 250;
-        --primary-foreground: 30 30 30;
-        --secondary: 45 45 45;
-        --secondary-foreground: 250 250 250;
-        --muted: 45 45 45;
+        --background: 15 15 15;
+        --foreground: 245 245 245;
+        --card: 15 15 15;
+        --card-foreground: 245 245 245;
+        --popover: 15 15 15;
+        --popover-foreground: 245 245 245;
+        --primary: 245 245 245;
+        --primary-foreground: 15 15 15;
+        --secondary: 31 31 31;
+        --secondary-foreground: 245 245 245;
+        --muted: 31 31 31;
         --muted-foreground: 161 161 170;
-        --accent: 45 45 45;
-        --accent-foreground: 250 250 250;
+        --accent: 31 31 31;
+        --accent-foreground: 245 245 245;
         --destructive: 127 29 29;
-        --destructive-foreground: 250 250 250;
-        --border: 45 45 45;
-        --input: 45 45 45;
+        --destructive-foreground: 245 245 245;
+        --border: 31 31 31;
+        --input: 31 31 31;
         --ring: 212 212 216;
         --chart-1: 220 70% 50%;
         --chart-2: 160 60% 45%;
@@ -484,18 +551,43 @@ body {
         @apply border-border;
     }
     body {
-        @apply bg-[#f8f9fa] text-foreground transition-colors duration-300;
+        @apply bg-background text-foreground transition-colors duration-300;
     }
 }
 
-/* Improved text contrast */
+/* Improved text contrast for dark mode */
 .text-enhanced {
     color: #374151;
     font-weight: 500;
 }
 
 .dark .text-enhanced {
-    color: #e5e7eb;
+    color: #f3f4f6;
+}
+
+/* Dark mode text improvements */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #f9fafb;
+}
+
+.dark p {
+    color: #d1d5db;
+}
+
+.dark .text-gray-800 {
+    color: #f9fafb !important;
+}
+
+.dark .text-gray-700 {
+    color: #e5e7eb !important;
+}
+
+.dark .text-gray-600 {
+    color: #d1d5db !important;
+}
+
+.dark .text-gray-500 {
+    color: #9ca3af !important;
 }
 
 /* Subtle animations */
@@ -511,6 +603,11 @@ body {
 /* Enhanced focus states */
 .neuro-btn:focus-visible {
     outline: 2px solid rgba(163, 191, 250, 0.6);
+    outline-offset: 2px;
+}
+
+.dark .neuro-btn:focus-visible {
+    outline: 2px solid rgba(99, 102, 241, 0.8);
     outline-offset: 2px;
 }
 
@@ -541,7 +638,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark .text-gradient {
-    background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+    background: linear-gradient(135deg, #f9fafb, #e5e7eb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
