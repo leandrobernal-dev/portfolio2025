@@ -5,19 +5,51 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex items-center justify-center relative py-16 neuro-section mt-10 overflow-hidden">
+        <section className="min-h-screen flex items-center justify-center relative py-16 overflow-hidden bg-[#f0f0f3] dark:bg-[#0f0f0f]">
             <div className="container mx-auto px-2 relative">
-                {/* Background HELLO Text */}
+                {/* Background HELLO Text - Fixed visibility */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
                     className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
                 >
-                    <div className="text-[20vw] lg:text-[15vw] xl:text-[12vw] font-black tracking-wider select-none">
-                        <span className="neuro-inset inline-block px-8 py-4 text-transparent bg-clip-text bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-900">
-                            HELLO
-                        </span>
+                    <div 
+                        className="text-[20vw] lg:text-[15vw] xl:text-[12vw] font-black tracking-wider select-none"
+                        style={{
+                            textShadow: `
+                                inset 8px 8px 16px rgba(163, 177, 198, 0.3),
+                                inset -8px -8px 16px rgba(255, 255, 255, 0.8),
+                                2px 2px 4px rgba(163, 177, 198, 0.1)
+                            `,
+                            color: '#e8eaed',
+                            WebkitTextStroke: '1px rgba(163, 177, 198, 0.2)',
+                        }}
+                    >
+                        HELLO
+                    </div>
+                </motion.div>
+
+                {/* Dark mode background HELLO text */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.2, delay: 0.3 }}
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 dark:block hidden"
+                >
+                    <div 
+                        className="text-[20vw] lg:text-[15vw] xl:text-[12vw] font-black tracking-wider select-none"
+                        style={{
+                            textShadow: `
+                                inset 8px 8px 16px rgba(0, 0, 0, 0.7),
+                                inset -8px -8px 16px rgba(40, 40, 40, 0.2),
+                                2px 2px 4px rgba(0, 0, 0, 0.4)
+                            `,
+                            color: '#171717',
+                            WebkitTextStroke: '1px rgba(0, 0, 0, 0.3)',
+                        }}
+                    >
+                        HELLO
                     </div>
                 </motion.div>
 
@@ -107,7 +139,7 @@ export default function Hero() {
                             transition={{ delay: 0.6, duration: 0.8 }}
                             className="text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight text-gradient leading-none mb-6"
                         >
-                            Full Stack Developer
+                            Full Stack
                             <br />
                             <span className="relative">
                                 Developer
