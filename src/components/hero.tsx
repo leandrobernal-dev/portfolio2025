@@ -15,7 +15,7 @@ export default function Hero() {
                     className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
                 >
                     <div
-                        className="text-[25vw] font-black tracking-wider select-none dark:hidden"
+                        className="text-[25vw] font-black tracking-wider select-none hidden md:flex dark:hidden"
                         style={{
                             textShadow: `
                                  8px 8px 16px rgba(163, 177, 198, 0.3),
@@ -23,7 +23,6 @@ export default function Hero() {
                                 2px 2px 4px rgba(163, 177, 198, 0.1)
                             `,
                             color: "#e8eaed",
-                            // WebkitTextStroke: "1px rgba(163, 177, 198, 0.2)",
                         }}
                     >
                         HELLO
@@ -31,27 +30,26 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Dark mode background HELLO text */}
-                {/* <motion.div
+                <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 hidden dark:flex"
+                    className="absolute inset-0 items-center justify-center pointer-events-none z-10 hidden dark:md:flex"
                 >
                     <div
-                        className="text-[20vw] lg:text-[15vw] xl:text-[12vw] font-black tracking-wider select-none"
+                        className="text-[25vw] font-black tracking-wider select-none"
                         style={{
                             textShadow: `
-                                inset 8px 8px 16px rgba(0, 0, 0, 0.7),
-                                inset -8px -8px 16px rgba(40, 40, 40, 0.2),
+                                 8px 8px 16px rgba(0, 0, 0, 0.7),
+                                 -8px -8px 16px rgba(40, 40, 40, 0.2),
                                 2px 2px 4px rgba(0, 0, 0, 0.4)
                             `,
                             color: "#171717",
-                            WebkitTextStroke: "1px rgba(0, 0, 0, 0.3)",
                         }}
                     >
                         HELLO
                     </div>
-                </motion.div> */}
+                </motion.div>
 
                 {/* Decorative Neumorphic Shapes - Lower z-index, positioned to avoid center */}
                 <div className="absolute inset-0 pointer-events-none z-5">
@@ -137,7 +135,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="text-6xl sm:text-7xl font-black tracking-tight text-gray-800 dark:text-gray-100 leading-none mb-8 "
+                            className="text-7xl sm:text-[7vw] font-black tracking-tight text-gray-800 dark:text-gray-100 leading-none mb-8 "
                             style={{
                                 textShadow: `
                                     2px 2px 4px rgba(163, 177, 198, 0.3),
@@ -146,21 +144,7 @@ export default function Hero() {
                             }}
                         >
                             Full Stack Developer
-                            <br />
                         </motion.h1>
-
-                        {/* Subtitle */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8, duration: 0.6 }}
-                            className="space-y-4"
-                        >
-                            <p className="lg:text-xl text-gray-600 dark:text-gray-400 font-medium max-w-3xl mx-auto leading-relaxed">
-                                I love building projects and experiences with
-                                users in mind.
-                            </p>
-                        </motion.div>
                     </motion.div>
                 </motion.div>
             </div>

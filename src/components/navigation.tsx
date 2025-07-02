@@ -46,7 +46,8 @@ export default function Navigation() {
             <div className="container mx-auto px-2 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo and Name */}
-                    <motion.div
+                    <motion.a
+                        href="/"
                         className="flex items-center gap-4"
                         whileHover={{ scale: 1.02 }}
                     >
@@ -62,7 +63,7 @@ export default function Navigation() {
                                 LEANDRO BERNAL
                             </h1>
                         </div>
-                    </motion.div>
+                    </motion.a>
 
                     <div className="hidden md:flex items-center space-x-2">
                         {["Work", "About", "Tech"].map((item) => (
