@@ -66,17 +66,19 @@ export default function Navigation() {
                     </motion.a>
 
                     <div className="hidden md:flex items-center space-x-2">
-                        {["About", "Work", "Experience", "Tech"].map((item) => (
-                            <motion.a
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
-                                className="neuro-btn px-5 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium text-sm"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                {item}
-                            </motion.a>
-                        ))}
+                        {["About", "Projects", "Experience", "Tech"].map(
+                            (item) => (
+                                <motion.a
+                                    key={item}
+                                    href={`#${item.toLowerCase()}`}
+                                    className="neuro-btn px-5 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium text-sm"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    {item}
+                                </motion.a>
+                            )
+                        )}
 
                         {/* Dark Mode Toggle */}
                         <motion.button
@@ -167,7 +169,7 @@ export default function Navigation() {
                         className="md:hidden neuro-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
-                            {["About", "Work", "Experience", "tech"].map(
+                            {["About", "Projects", "Experience", "tech"].map(
                                 (item) => (
                                     <motion.a
                                         key={item}
