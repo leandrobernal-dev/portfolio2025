@@ -45,10 +45,10 @@ export default function Navigation() {
         >
             <div className="container mx-auto px-2 py-4">
                 <div className="flex items-center justify-between">
-                    <motion.a
-                        href="/"
-                        className="text-xl font-bold"
-                        whileHover={{ scale: 1.05 }}
+                    {/* Logo and Name */}
+                    <motion.div
+                        className="flex items-center gap-4"
+                        whileHover={{ scale: 1.02 }}
                     >
                         <div className="neuro-card p-3">
                             <img
@@ -57,10 +57,15 @@ export default function Navigation() {
                                 className="w-8 h-8 logo-invert"
                             />
                         </div>
-                    </motion.a>
+                        <div className="hidden sm:block">
+                            <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200 tracking-wide">
+                                LEANDRO BERNAL
+                            </h1>
+                        </div>
+                    </motion.div>
 
                     <div className="hidden md:flex items-center space-x-2">
-                        {["Projects", "Experience", "Tech"].map((item) => (
+                        {["Work", "About", "Contact"].map((item) => (
                             <motion.a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
@@ -161,7 +166,7 @@ export default function Navigation() {
                         className="md:hidden neuro-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
-                            {["Projects", "Experience", "Tech"].map((item) => (
+                            {["Work", "About", "Contact"].map((item) => (
                                 <motion.a
                                     key={item}
                                     href={`#${item.toLowerCase()}`}

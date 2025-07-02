@@ -12,7 +12,9 @@ export default function Home() {
             <Navigation />
             <Hero />
             <About />
-            <Projects />
+            <div id="work">
+                <Projects />
+            </div>
             <Experience />
             <TechStack />
             <Footer />
