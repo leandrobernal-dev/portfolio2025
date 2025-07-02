@@ -51,7 +51,7 @@ export default function Hero() {
                     </div>
                 </motion.div>
 
-                {/* Decorative Neumorphic Shapes - Lower z-index, positioned to avoid center */}
+                {/* Decorative Neumorphic Shapes - Enhanced with more colored shapes */}
                 <div className="absolute inset-0 pointer-events-none z-5">
                     {/* Top left corner */}
                     <motion.div
@@ -85,23 +85,74 @@ export default function Hero() {
                         className="absolute bottom-24 right-20 w-28 h-28 neuro-card rounded-full"
                     />
 
-                    {/* Small accent shapes - positioned in corners */}
+                    {/* Enhanced colored accent shapes */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 1.7 }}
-                        className="absolute top-1/4 left-1/6 w-6 h-6 neuro-accent-blue rounded-full float-animation"
+                        className="absolute top-1/4 left-1/6 w-8 h-8 neuro-accent-blue rounded-full float-animation"
                     />
 
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 2.0 }}
-                        className="absolute bottom-1/4 right-1/6 w-4 h-4 neuro-accent-purple rounded-full float-animation"
+                        className="absolute bottom-1/4 right-1/6 w-6 h-6 neuro-accent-purple rounded-full float-animation"
                         style={{ animationDelay: "2s" }}
                     />
 
-                    {/* Additional corner shapes */}
+                    {/* New colored shapes */}
+                    <motion.div
+                        initial={{ opacity: 0, rotate: -180 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        transition={{ duration: 1.2, delay: 0.9 }}
+                        className="absolute top-1/3 right-1/4 w-12 h-12 neuro-accent-blue rounded-lg transform rotate-45 float-animation"
+                        style={{ animationDelay: "1s" }}
+                    />
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 1.6 }}
+                        className="absolute bottom-1/3 left-1/4 w-10 h-10 neuro-accent-purple rounded-full float-animation"
+                        style={{ animationDelay: "3s" }}
+                    />
+
+                    {/* Additional geometric shapes */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 1.3 }}
+                        className="absolute top-1/2 left-12 w-6 h-16 neuro-accent-blue rounded-full transform -rotate-12 float-animation"
+                        style={{ animationDelay: "4s" }}
+                    />
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 1.8 }}
+                        className="absolute top-1/2 right-16 w-14 h-8 neuro-accent-purple rounded-2xl transform rotate-45 float-animation"
+                        style={{ animationDelay: "5s" }}
+                    />
+
+                    {/* Small accent dots */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 2.2 }}
+                        className="absolute top-1/5 right-1/3 w-4 h-4 neuro-accent-blue rounded-full float-animation"
+                        style={{ animationDelay: "6s" }}
+                    />
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 2.4 }}
+                        className="absolute bottom-1/5 left-1/3 w-5 h-5 neuro-accent-purple rounded-full float-animation"
+                        style={{ animationDelay: "7s" }}
+                    />
+
+                    {/* Corner accent shapes */}
                     <motion.div
                         initial={{ opacity: 0, rotate: -45 }}
                         animate={{ opacity: 1, rotate: 0 }}
@@ -114,6 +165,29 @@ export default function Hero() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1.8 }}
                         className="absolute top-2/3 right-8 w-8 h-8 neuro-medium rounded-lg transform rotate-45"
+                    />
+
+                    {/* Floating triangular shapes */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 2.1 }}
+                        className="absolute top-3/4 left-1/5 w-0 h-0 border-l-[8px] border-r-[8px] border-b-[14px] border-l-transparent border-r-transparent border-b-blue-300 float-animation"
+                        style={{ 
+                            animationDelay: "8s",
+                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))"
+                        }}
+                    />
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 2.3 }}
+                        className="absolute top-1/6 right-1/5 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-purple-300 float-animation transform rotate-180"
+                        style={{ 
+                            animationDelay: "9s",
+                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))"
+                        }}
                     />
                 </div>
 
