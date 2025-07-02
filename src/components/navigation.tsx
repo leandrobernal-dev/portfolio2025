@@ -38,7 +38,7 @@ export default function Navigation() {
 
     return (
         <motion.nav
-            className="fixed top-0 w-full z-50 neuro-nav"
+            className="fixed top-0 w-full z-[999] neuro-nav"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
@@ -65,7 +65,7 @@ export default function Navigation() {
                     </motion.div>
 
                     <div className="hidden md:flex items-center space-x-2">
-                        {["Work", "About", "Contact"].map((item) => (
+                        {["Work", "About", "Tech"].map((item) => (
                             <motion.a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
@@ -166,7 +166,7 @@ export default function Navigation() {
                         className="md:hidden neuro-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
-                            {["Work", "About", "Contact"].map((item) => (
+                            {["Work", "About", "tech"].map((item) => (
                                 <motion.a
                                     key={item}
                                     href={`#${item.toLowerCase()}`}
