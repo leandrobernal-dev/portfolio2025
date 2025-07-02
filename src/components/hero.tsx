@@ -1,155 +1,153 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Code, Zap, Heart, Sparkles } from "lucide-react";
+import { MapPin, Sparkles } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex items-center justify-center relative py-16 neuro-section mt-10">
-            <div className="container mx-auto px-2">
+        <section className="min-h-screen flex items-center justify-center relative py-16 neuro-section mt-10 overflow-hidden">
+            <div className="container mx-auto px-2 relative">
+                {/* Decorative Neumorphic Shapes */}
+                <div className="absolute inset-0 pointer-events-none">
+                    {/* Large circle - top right */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="absolute top-20 right-10 w-32 h-32 neuro-card rounded-full"
+                        style={{
+                            background: "linear-gradient(145deg, #f8f9fa, #e9ecef)",
+                        }}
+                    />
+                    
+                    {/* Medium circle - left side */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                        className="absolute top-1/3 left-16 w-20 h-20 neuro-inset rounded-full"
+                    />
+                    
+                    {/* Small circle - bottom right */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 1.1 }}
+                        className="absolute bottom-32 right-1/4 w-12 h-12 neuro-card rounded-full"
+                    />
+                    
+                    {/* Accent circle - top left */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 1.4 }}
+                        className="absolute top-1/4 left-1/3 w-6 h-6 neuro-accent-blue rounded-full"
+                    />
+                    
+                    {/* Rectangle shape - middle right */}
+                    <motion.div
+                        initial={{ opacity: 0, rotate: -45 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        transition={{ duration: 1, delay: 0.6 }}
+                        className="absolute top-1/2 right-20 w-16 h-24 neuro-card rounded-2xl transform rotate-12"
+                    />
+                    
+                    {/* Small accent dot - bottom left */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 1.7 }}
+                        className="absolute bottom-1/3 left-1/4 w-4 h-4 neuro-accent-purple rounded-full"
+                    />
+                </div>
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-6xl mx-auto"
+                    className="max-w-4xl mx-auto text-center relative z-10"
                 >
-                    <div className="neuro-hero-main p-8 lg:p-12 relative overflow-hidden">
-                        {/* Subtle background decoration */}
-                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                    {/* Main Content */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                        className="space-y-8"
+                    >
+                        {/* Greeting */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.4, duration: 0.6 }}
+                            className="inline-block"
+                        >
+                            <div className="neuro-card px-6 py-3 inline-flex items-center gap-2">
+                                <span className="text-2xl">👋</span>
+                                <span className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                                    Hello, I am
+                                </span>
+                            </div>
+                        </motion.div>
 
-                        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                            {/* Left Column - Header */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -30 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.2, duration: 0.6 }}
-                                className="space-y-6"
+                        {/* Name */}
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6, duration: 0.8 }}
+                            className="text-6xl lg:text-8xl xl:text-9xl font-black tracking-tight text-gradient leading-none"
+                        >
+                            Leandro
+                            <br />
+                            <span className="relative">
+                                Bernal
+                                <motion.span
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{ delay: 1.2, duration: 0.5 }}
+                                    className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full"
+                                />
+                            </span>
+                        </motion.h1>
+
+                        {/* Role & Location */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.8, duration: 0.6 }}
+                            className="space-y-4"
+                        >
+                            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-700 dark:text-gray-300 tracking-wide">
+                                Full Stack Developer
+                            </h2>
+                            
+                            <div className="flex justify-center">
+                                <div className="neuro-shallow p-3 flex items-center gap-2">
+                                    <MapPin className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                                    <span className="text-gray-600 dark:text-gray-400 font-medium">
+                                        Philippines
+                                    </span>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* CTA Button */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 1.0, duration: 0.6 }}
+                            className="pt-8"
+                        >
+                            <motion.a
+                                href="#projects"
+                                className="neuro-accent-blue inline-flex items-center gap-3 px-8 py-4 text-white font-semibold tracking-wide rounded-2xl text-lg"
+                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileTap={{ scale: 0.95 }}
                             >
-                                <div>
-                                    <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black mb-4 tracking-tight text-gradient leading-none">
-                                        Leandro Bernal
-                                    </h1>
-
-                                    <div className="flex flex-wrap items-center gap-4 mb-6">
-                                        <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-700 dark:text-gray-300 tracking-wide">
-                                            Full Stack Developer
-                                        </h2>
-                                        <div className="neuro-shallow p-2 flex items-center gap-2">
-                                            <MapPin className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                                            <span className="text-gray-600 dark:text-gray-400 font-medium text-sm">
-                                                Philippines
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-wrap gap-4">
-                                    <motion.a
-                                        href="#projects"
-                                        className="neuro-accent-blue inline-flex items-center gap-2 px-6 py-3 text-white font-semibold tracking-wide rounded-xl"
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <Sparkles className="w-4 h-4" />
-                                        View My Work
-                                    </motion.a>
-                                </div>
-                            </motion.div>
-
-                            {/* Right Column - Details */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 30 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.4, duration: 0.6 }}
-                                className="space-y-4"
-                            >
-                                <div className="neuro-hero-content p-6 relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                                    <div className="flex items-start gap-3">
-                                        <div className="neuro-medium p-2 mt-1 float-animation neuro-accent-blue">
-                                            <Code className="w-5 h-5 text-white" />
-                                        </div>
-                                        <div className="text-left flex-1">
-                                            <h3 className="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2 tracking-wide">
-                                                From Robots to Web
-                                            </h3>
-                                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
-                                                I used to build{" "}
-                                                <strong className="text-gray-800">
-                                                    robots
-                                                </strong>
-                                                , now I build websites 🔨🤖➡️🌐.
-                                                I've been freelancing for{" "}
-                                                <strong className="text-gray-800">
-                                                    3 years
-                                                </strong>{" "}
-                                                now, building and maintaining
-                                                websites and web applications
-                                                for my clients.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="neuro-hero-content p-6 relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                                    <div className="flex items-start gap-3">
-                                        <div
-                                            className="neuro-medium p-2 mt-1 float-animation neuro-accent-purple"
-                                            style={{ animationDelay: "2s" }}
-                                        >
-                                            <Zap className="w-5 h-5 text-white" />
-                                        </div>
-                                        <div className="text-left flex-1">
-                                            <h3 className="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2 tracking-wide">
-                                                Framework
-                                            </h3>
-                                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
-                                                My go-to framework for both
-                                                front-end and full-stack
-                                                applications is{" "}
-                                                <strong className="text-gray-800">
-                                                    Next.js
-                                                </strong>
-                                                . When I start building a new
-                                                personal project, Next.js helps
-                                                me quickly and efficiently bring
-                                                ideas to life. It allows for
-                                                rapid testing and iteration,
-                                                making it perfect for exploring
-                                                new concepts and refining them
-                                                along the way.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="neuro-hero-content p-6 relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                                    <div className="flex items-start gap-3">
-                                        <div
-                                            className="neuro-medium p-2 mt-1 float-animation"
-                                            style={{ animationDelay: "4s" }}
-                                        >
-                                            <Heart className="w-5 h-5 text-red-500" />
-                                        </div>
-                                        <div className="text-left flex-1">
-                                            <h3 className="font-bold text-lg text-gray-800 dark:text-gray-200 mb-2 tracking-wide">
-                                                Beyond the Code
-                                            </h3>
-                                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
-                                                In my spare time, I enjoy 3D
-                                                printing and 3d modeling, or
-                                                play fingerstyle on my acoustic
-                                                guitar🎸. I also play online
-                                                chess♟️.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
+                                <Sparkles className="w-5 h-5" />
+                                View My Work
+                            </motion.a>
+                        </motion.div>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
