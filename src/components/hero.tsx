@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Black_Han_Sans } from "next/font/google";
+
+const blackHanSans = Black_Han_Sans({
+    subsets: ["latin"],
+    weight: "400",
+});
 
 export default function Hero() {
     return (
@@ -15,7 +21,7 @@ export default function Hero() {
                     className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
                 >
                     <div
-                        className="text-[25vw] font-black tracking-wider select-none hidden md:flex dark:hidden"
+                        className={`text-[25vw] tracking-wider select-none hidden md:flex dark:hidden ${blackHanSans.className}`}
                         style={{
                             textShadow: `
                                  8px 8px 16px rgba(163, 177, 198, 0.3),
@@ -37,7 +43,7 @@ export default function Hero() {
                     className="absolute inset-0 items-center justify-center pointer-events-none z-10 hidden dark:md:flex"
                 >
                     <div
-                        className="text-[25vw] font-black tracking-wider select-none"
+                        className={`text-[25vw] font-black tracking-wider select-none ${blackHanSans.className}`}
                         style={{
                             textShadow: `
                                  8px 8px 16px rgba(0, 0, 0, 0.7),
@@ -185,9 +191,9 @@ export default function Hero() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 2.1 }}
                         className="absolute top-3/4 left-1/5 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] md:border-l-[8px] md:border-r-[8px] md:border-b-[14px] border-l-transparent border-r-transparent border-b-blue-300 float-animation hidden md:block"
-                        style={{ 
+                        style={{
                             animationDelay: "8s",
-                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))"
+                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))",
                         }}
                     />
 
@@ -196,9 +202,9 @@ export default function Hero() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 2.3 }}
                         className="absolute top-1/6 right-1/5 w-0 h-0 border-l-[4px] border-r-[4px] border-b-[8px] md:border-l-[6px] md:border-r-[6px] md:border-b-[10px] border-l-transparent border-r-transparent border-b-purple-300 float-animation transform rotate-180 hidden md:block"
-                        style={{ 
+                        style={{
                             animationDelay: "9s",
-                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))"
+                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))",
                         }}
                     />
                 </div>
