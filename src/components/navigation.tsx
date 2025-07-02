@@ -51,7 +51,7 @@ export default function Navigation() {
                         whileHover={{ scale: 1.05 }}
                     >
                         <div className="neuro-card p-3">
-                            <img src="/logo.svg" alt="" className="w-8 h-8" />
+                            <img src="/logo.svg" alt="" className="w-8 h-8 logo-invert" />
                         </div>
                     </motion.a>
 

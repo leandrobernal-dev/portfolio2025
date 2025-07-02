@@ -283,6 +283,15 @@ body {
         border-radius: 50px;
         transition: all 0.3s ease;
     }
+
+    /* Logo inversion for dark mode */
+    .logo-invert {
+        transition: filter 0.3s ease;
+    }
+
+    .dark .logo-invert {
+        filter: invert(1) brightness(1.2);
+    }
 }
 
 /* Dark mode neumorphism - Enhanced Colors */
