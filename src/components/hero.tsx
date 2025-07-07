@@ -18,7 +18,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
                 >
                     <div
                         className={`text-[25vw] tracking-wider select-none hidden md:flex dark:hidden ${blackHanSans.className}`}
@@ -40,7 +40,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
-                    className="absolute inset-0 items-center justify-center pointer-events-none z-10 hidden dark:md:flex"
+                    className="absolute inset-0 items-center justify-center pointer-events-none z-0 hidden dark:md:flex"
                 >
                     <div
                         className={`text-[25vw] font-black tracking-wider select-none ${blackHanSans.className}`}
@@ -118,28 +118,36 @@ export default function Hero() {
                         className="absolute bottom-1/3 right-6 w-18 h-10 neuro-card rounded-full transform -rotate-12"
                     />
 
-                    {/* Colored accent shapes - fewer on mobile, more on desktop */}
+                    {/* Colored accent shapes - better spaced out */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 1.7 }}
-                        className="absolute top-1/4 left-1/6 w-6 h-6 md:w-8 md:h-8 neuro-accent-blue rounded-full float-animation"
+                        className="absolute top-1/6 left-1/5 w-6 h-6 md:w-8 md:h-8 neuro-accent-blue rounded-full float-animation"
                     />
 
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 2.0 }}
-                        className="absolute bottom-1/4 right-1/6 w-4 h-4 md:w-6 md:h-6 neuro-accent-purple rounded-full float-animation"
+                        className="absolute bottom-1/5 right-1/5 w-4 h-4 md:w-6 md:h-6 neuro-accent-purple rounded-full float-animation"
                         style={{ animationDelay: "2s" }}
                     />
 
-                    {/* Desktop-only colored shapes */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 2.2 }}
+                        className="absolute top-1/5 right-1/4 w-5 h-5 md:w-7 md:h-7 neuro-accent-red rounded-full float-animation"
+                        style={{ animationDelay: "3s" }}
+                    />
+
+                    {/* Desktop-only colored shapes - better spaced */}
                     <motion.div
                         initial={{ opacity: 0, rotate: -180 }}
                         animate={{ opacity: 1, rotate: 0 }}
                         transition={{ duration: 1.2, delay: 0.9 }}
-                        className="absolute top-1/3 right-1/4 w-8 h-8 md:w-12 md:h-12 neuro-accent-blue rounded-lg transform rotate-45 float-animation hidden md:block"
+                        className="absolute top-1/4 right-1/6 w-8 h-8 md:w-12 md:h-12 neuro-accent-blue rounded-lg transform rotate-45 float-animation hidden md:block"
                         style={{ animationDelay: "1s" }}
                     />
 
@@ -147,65 +155,50 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 1.6 }}
-                        className="absolute bottom-1/3 left-1/4 w-6 h-6 md:w-10 md:h-10 neuro-accent-purple rounded-full float-animation hidden md:block"
-                        style={{ animationDelay: "3s" }}
+                        className="absolute bottom-1/4 left-1/6 w-6 h-6 md:w-10 md:h-10 neuro-accent-purple rounded-full float-animation hidden md:block"
+                        style={{ animationDelay: "4s" }}
                     />
 
-                    {/* Additional desktop-only geometric shapes */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 1.8 }}
+                        className="absolute top-2/3 left-1/5 w-5 h-5 md:w-8 md:h-8 neuro-accent-red rounded-full float-animation hidden md:block"
+                        style={{ animationDelay: "5s" }}
+                    />
+
+                    {/* Additional desktop-only geometric shapes - better spaced */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 1.3 }}
-                        className="absolute top-1/2 left-12 w-4 h-12 md:w-6 md:h-16 neuro-accent-blue rounded-full transform -rotate-12 float-animation hidden md:block"
-                        style={{ animationDelay: "4s" }}
+                        className="absolute top-3/5 left-12 w-4 h-12 md:w-6 md:h-16 neuro-accent-blue rounded-full transform -rotate-12 float-animation hidden md:block"
+                        style={{ animationDelay: "6s" }}
                     />
 
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 1.8 }}
-                        className="absolute top-1/2 right-16 w-10 h-6 md:w-14 md:h-8 neuro-accent-purple rounded-2xl transform rotate-45 float-animation hidden md:block"
-                        style={{ animationDelay: "5s" }}
+                        className="absolute top-2/5 right-16 w-10 h-6 md:w-14 md:h-8 neuro-accent-red rounded-2xl transform rotate-45 float-animation hidden md:block"
+                        style={{ animationDelay: "7s" }}
                     />
 
-                    {/* Small accent dots - mobile gets fewer */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 2.2 }}
-                        className="absolute top-1/5 right-1/3 w-3 h-3 md:w-4 md:h-4 neuro-accent-blue rounded-full float-animation hidden md:block"
-                        style={{ animationDelay: "6s" }}
-                    />
-
+                    {/* Small accent dots - better distributed */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 2.4 }}
-                        className="absolute bottom-1/5 left-1/3 w-3 h-3 md:w-5 md:h-5 neuro-accent-purple rounded-full float-animation hidden md:block"
-                        style={{ animationDelay: "7s" }}
-                    />
-
-                    {/* Floating triangular shapes - desktop only */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 2.1 }}
-                        className="absolute top-3/4 left-1/5 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] md:border-l-[8px] md:border-r-[8px] md:border-b-[14px] border-l-transparent border-r-transparent border-b-blue-300 float-animation hidden md:block"
-                        style={{
-                            animationDelay: "8s",
-                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))",
-                        }}
+                        className="absolute top-1/8 right-2/5 w-3 h-3 md:w-4 md:h-4 neuro-accent-purple rounded-full float-animation hidden md:block"
+                        style={{ animationDelay: "8s" }}
                     />
 
                     <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 2.3 }}
-                        className="absolute top-1/6 right-1/5 w-0 h-0 border-l-[4px] border-r-[4px] border-b-[8px] md:border-l-[6px] md:border-r-[6px] md:border-b-[10px] border-l-transparent border-r-transparent border-b-purple-300 float-animation transform rotate-180 hidden md:block"
-                        style={{
-                            animationDelay: "9s",
-                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))",
-                        }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 2.6 }}
+                        className="absolute bottom-1/8 left-2/5 w-3 h-3 md:w-5 md:h-5 neuro-accent-red rounded-full float-animation hidden md:block"
+                        style={{ animationDelay: "9s" }}
                     />
                 </div>
 
