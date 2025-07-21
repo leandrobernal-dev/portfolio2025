@@ -18,10 +18,10 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
+                    className="absolute inset-0 flex items-center justify-center  z-10"
                 >
                     <div
-                        className={`text-[25vw] tracking-wider select-none hidden md:flex dark:hidden ${blackHanSans.className}`}
+                        className={`text-[25vw] tracking-wider  hidden md:flex dark:hidden ${blackHanSans.className}`}
                         style={{
                             textShadow: `
                                  8px 8px 16px rgba(163, 177, 198, 0.3),
@@ -183,29 +183,6 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 2.4 }}
                         className="absolute bottom-1/5 left-1/3 w-3 h-3 md:w-5 md:h-5 neuro-accent-purple rounded-full float-animation hidden md:block"
                         style={{ animationDelay: "7s" }}
-                    />
-
-                    {/* Floating triangular shapes - desktop only */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 2.1 }}
-                        className="absolute top-3/4 left-1/5 w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] md:border-l-[8px] md:border-r-[8px] md:border-b-[14px] border-l-transparent border-r-transparent border-b-blue-300 float-animation hidden md:block"
-                        style={{
-                            animationDelay: "8s",
-                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))",
-                        }}
-                    />
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 2.3 }}
-                        className="absolute top-1/6 right-1/5 w-0 h-0 border-l-[4px] border-r-[4px] border-b-[8px] md:border-l-[6px] md:border-r-[6px] md:border-b-[10px] border-l-transparent border-r-transparent border-b-purple-300 float-animation transform rotate-180 hidden md:block"
-                        style={{
-                            animationDelay: "9s",
-                            filter: "drop-shadow(4px 4px 8px rgba(163, 177, 198, 0.3)) drop-shadow(-4px -4px 8px rgba(255, 255, 255, 0.8))",
-                        }}
                     />
                 </div>
 
