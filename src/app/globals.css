@@ -243,6 +243,14 @@ body {
             -8px -8px 16px rgba(255, 255, 255, 0.8);
     }
 
+    .neuro-accent-red {
+        background: linear-gradient(145deg, #f87171, #ef4444);
+        color: white;
+        box-shadow: 
+            8px 8px 16px rgba(248, 113, 113, 0.4),
+            -8px -8px 16px rgba(255, 255, 255, 0.8);
+    }
+
     .neuro-accent-blue:hover {
         background: linear-gradient(145deg, #93b3f7, #83a3f4);
         transform: translateY(-2px) scale(1.02);
@@ -250,6 +258,11 @@ body {
 
     .neuro-accent-purple:hover {
         background: linear-gradient(145deg, #c7b0f0, #bea6ed);
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    .neuro-accent-red:hover {
+        background: linear-gradient(145deg, #ef4444, #dc2626);
         transform: translateY(-2px) scale(1.02);
     }
 
@@ -488,6 +501,14 @@ body {
             -8px -8px 16px rgba(168, 85, 247, 0.1);
     }
 
+    .dark .neuro-accent-red {
+        background: linear-gradient(145deg, #dc2626, #b91c1c);
+        color: white;
+        box-shadow: 
+            8px 8px 16px rgba(220, 38, 38, 0.3),
+            -8px -8px 16px rgba(248, 113, 113, 0.1);
+    }
+
     .dark .neuro-accent-blue:hover {
         background: linear-gradient(145deg, #5b21b6, #4c1d95);
         transform: translateY(-2px) scale(1.02);
@@ -495,6 +516,11 @@ body {
 
     .dark .neuro-accent-purple:hover {
         background: linear-gradient(145deg, #9333ea, #7e22ce);
+        transform: translateY(-2px) scale(1.02);
+    }
+
+    .dark .neuro-accent-red:hover {
+        background: linear-gradient(145deg, #b91c1c, #991b1b);
         transform: translateY(-2px) scale(1.02);
     }
 }
