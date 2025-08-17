@@ -222,7 +222,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.0, duration: 0.6 }}
-                className="pt-8 absolute bottom-16 w-full flex justify-center"
+                className="pt-8 absolute bottom-16 w-full flex justify-center z-50"
             >
                 <motion.a
                     href="#work"
