@@ -11,12 +11,12 @@ export default function Home() {
         <main className="min-h-screen bg-[#f0f0f3] dark:bg-[#0f0f0f]">
             <Navigation />
             <Hero />
-            <About />
             <div id="work">
                 <Projects />
             </div>
             <Experience />
             <TechStack />
+            <About />
             <Footer />
         </main>
     );

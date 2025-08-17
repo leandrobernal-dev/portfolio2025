@@ -66,7 +66,7 @@ export default function Navigation() {
                     </motion.a>
 
                     <div className="hidden md:flex items-center space-x-2">
-                        {["About", "Projects", "Experience", "Tech"].map(
+                        {["Projects", "Experience", "Tech", "About"].map(
                             (item) => (
                                 <motion.a
                                     key={item}
@@ -169,7 +169,7 @@ export default function Navigation() {
                         className="md:hidden neuro-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
-                            {["About", "Projects", "Experience", "tech"].map(
+                            {["Projects", "Experience", "tech", "About"].map(
                                 (item) => (
                                     <motion.a
                                         key={item}
