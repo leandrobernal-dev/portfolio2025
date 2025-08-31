@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const experiences = [
     {
-        role: "Junior Software Engineer - Contractor",
+        role: "Full Stack Developer - Contractor",
         company: "Bidlabs Inc.",
         period: "2025 - Present",
         location: "Remote",
@@ -21,7 +21,7 @@ const experiences = [
         color: "text-blue-600",
     },
     {
-        role: "Full Stack Engineer",
+        role: "Full Stack Developer",
         company: "Freelance",
         period: "2023 - 2025",
         location: "Remote",
@@ -37,7 +37,7 @@ const experiences = [
         color: "text-emerald-600",
     },
     {
-        role: "Frontend Engineer",
+        role: "Frontend Developer",
         company: "Freelance",
         period: "2022 - 2023",
         location: "Remote",
