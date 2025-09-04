@@ -1,20 +1,17 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Download } from "lucide-react";
 
 export default function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
-        // Check for saved theme preference or default to light mode
         const savedTheme = localStorage.getItem("theme");
         const prefersDark = window.matchMedia(
             "(prefers-color-scheme: light)"
         ).matches;
-
         if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
             setIsDark(true);
             document.documentElement.classList.add("dark");
@@ -58,15 +55,15 @@ export default function Navigation() {
                                 className="w-8 h-8 logo-invert"
                             />
                         </div>
-                        <div className="hidden sm:block">
+                        <div className="hidden lg:block">
                             <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200 tracking-wide">
                                 LEANDRO BERNAL
                             </h1>
                         </div>
                     </motion.a>
 
-                    <div className="hidden md:flex items-center space-x-2">
-                        {["Projects", "Experience", "Tech", "About"].map(
+                    <div className="hidden lg:flex items-center space-x-2">
+                        {["Projects", "Experience", "Skills", "About"].map(
                             (item) => (
                                 <motion.a
                                     key={item}
@@ -101,7 +98,7 @@ export default function Navigation() {
                         </motion.button>
                     </div>
 
-                    <div className="md:hidden flex items-center gap-2">
+                    <div className="lg:hidden flex items-center gap-2">
                         {/* Mobile Dark Mode Toggle */}
                         <motion.button
                             onClick={toggleDarkMode}
@@ -169,21 +166,37 @@ export default function Navigation() {
                         className="md:hidden neuro-inset mx-6 mb-4"
                     >
                         <div className="p-4 space-y-2">
-                            {["Projects", "Experience", "tech", "About"].map(
+                            {["Projects", "Experience", "Skills", "About"].map(
                                 (item) => (
                                     <motion.a
                                         key={item}
                                         href={`#${item.toLowerCase()}`}
                                         className="block neuro-btn p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
                                         whileHover={{ x: 5 }}
-                                        onClick={() =>
-                                            setIsMobileMenuOpen(false)
-                                        }
+                                        // onClick={() =>
+                                        //     setIsMobileMenuOpen(false)
+                                        // }
                                     >
                                         {item}
                                     </motion.a>
                                 )
                             )}
+
+                            <motion.a
+                                // href={`#${item.toLowerCase()}`}
+                                className="block neuro-btn p-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-center font-medium text-sm"
+                                whileHover={{ x: 5 }}
+                                onClick={() => {
+                                    document
+                                        .getElementById("footer")
+                                        ?.scrollIntoView({
+                                            behavior: "smooth",
+                                        });
+                                    // setIsMobileMenuOpen(false);
+                                }}
+                            >
+                                Contact
+                            </motion.a>
                         </div>
                     </motion.div>
                 )}

@@ -16,108 +16,193 @@ import {
     SiGraphql,
     SiPostgresql,
     SiShadcnui,
+    SiApache,
+    SiNginx,
+    SiGooglecloud,
+    SiAwslambda,
+    SiGithubactions,
+    SiKubernetes,
+    SiAnsible,
+    SiVite,
+    SiMysql,
+    SiExpress,
+    SiDjango,
 } from "react-icons/si";
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Server, Settings, Star } from "lucide-react";
+import { Code, Server, Settings } from "lucide-react";
+import { FaAws } from "react-icons/fa";
 
 const technologies = [
     {
         name: "React",
         icon: SiReact,
         category: "Frontend",
-        featured: true,
+
         color: "text-blue-500",
     },
     {
         name: "Next.js",
         icon: SiNextdotjs,
         category: "Frontend",
-        featured: true,
+
         color: "text-gray-800",
     },
     {
         name: "TypeScript",
         icon: SiTypescript,
         category: "Frontend",
-        featured: false,
+
         color: "text-blue-600",
     },
     {
         name: "Tailwind CSS",
         icon: SiTailwindcss,
         category: "Frontend",
-        featured: true,
+
         color: "text-cyan-500",
     },
     {
         name: "Shadcn UI",
         icon: SiShadcnui,
         category: "Frontend",
-        featured: false,
+
         color: "text-gray-700",
+    },
+    {
+        name: "Vite",
+        icon: SiVite,
+        category: "Frontend",
+        // color: "text-purple-500",
     },
     {
         name: "Node.js",
         icon: SiNodedotjs,
         category: "Backend",
-        featured: false,
+
         color: "text-green-600",
+    },
+    {
+        name: "Express.js",
+        icon: SiExpress,
+        category: "Backend",
+        color: "text-gray-700",
+    },
+    {
+        name: "Django",
+        icon: SiDjango,
+        category: "Backend",
+        color: "text-green-800",
     },
     {
         name: "Firebase",
         icon: SiFirebase,
         category: "Backend",
-        featured: false,
+
         color: "text-orange-500",
     },
     {
         name: "Supabase",
         icon: SiSupabase,
         category: "Backend",
-        featured: true,
+
         color: "text-emerald-600",
     },
     {
         name: "MongoDB",
         icon: SiMongodb,
         category: "Backend",
-        featured: false,
+
         color: "text-green-700",
     },
     {
         name: "PostgreSQL",
         icon: SiPostgresql,
         category: "Backend",
-        featured: false,
+
         color: "text-blue-700",
+    },
+    {
+        name: "MySQL",
+        icon: SiMysql,
+        category: "Backend",
+        color: "text-blue-500",
     },
     {
         name: "GraphQL",
         icon: SiGraphql,
         category: "Backend",
-        featured: false,
+
         color: "text-pink-600",
     },
     {
         name: "Python",
         icon: SiPython,
         category: "Backend",
-        featured: false,
+
         color: "text-yellow-600",
     },
     {
         name: "Docker",
         icon: SiDocker,
         category: "DevOps",
-        featured: false,
+
         color: "text-blue-600",
     },
     {
         name: "Git",
         icon: SiGit,
         category: "DevOps",
-        featured: true,
+
         color: "text-orange-600",
+    },
+    {
+        name: "GitHub Actions",
+        icon: SiGithubactions,
+        category: "DevOps",
+
+        color: "text-blue-500",
+    },
+    {
+        name: "Kubernetes",
+        icon: SiKubernetes,
+        category: "DevOps",
+
+        color: "text-blue-400",
+    },
+    {
+        name: "Ansible",
+        icon: SiAnsible,
+        category: "DevOps",
+
+        color: "text-red-600",
+    },
+    {
+        name: "AWS",
+        icon: FaAws,
+        category: "DevOps",
+
+        color: "text-orange-500",
+    },
+    {
+        name: "Google Cloud",
+        icon: SiGooglecloud,
+        category: "DevOps",
+
+        color: "text-blue-500",
+    },
+    {
+        name: "Nginx",
+        icon: SiNginx,
+        category: "DevOps",
+
+        color: "text-green-600",
+    },
+    {
+        name: "Apache",
+        icon: SiApache,
+        category: "DevOps",
+
+        color: "text-red-600",
     },
 ];
 
@@ -135,7 +220,10 @@ const categoryDescriptions = {
 
 export default function TechStack() {
     return (
-        <section id="tech" className="py-20 neuro-section">
+        <section
+            id="skills"
+            className="py-20 neuro-section px-2 sm:px-4 lg:px-16"
+        >
             <div className="container mx-auto px-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -157,17 +245,13 @@ export default function TechStack() {
                 </motion.div>
 
                 <div className="space-y-12">
-                    {["Frontend", "Backend", "DevOps"].map(
+                    {(["Frontend", "Backend", "DevOps"] as const).map(
                         (category, categoryIndex) => {
-                            const CategoryIcon = categoryIcons[category];
+                            type CategoryType = keyof typeof categoryIcons;
+                            const typedCategory = category as CategoryType;
+                            const CategoryIcon = categoryIcons[typedCategory];
                             const categoryTechs = technologies.filter(
                                 (tech) => tech.category === category
-                            );
-                            const featuredTechs = categoryTechs.filter(
-                                (tech) => tech.featured
-                            );
-                            const otherTechs = categoryTechs.filter(
-                                (tech) => !tech.featured
                             );
 
                             return (
@@ -196,7 +280,7 @@ export default function TechStack() {
                                                         <p className="text-gray-600 text-sm">
                                                             {
                                                                 categoryDescriptions[
-                                                                    category
+                                                                    typedCategory
                                                                 ]
                                                             }
                                                         </p>
@@ -206,135 +290,56 @@ export default function TechStack() {
 
                                             {/* Technologies Content */}
                                             <div className="p-8">
-                                                {/* Featured Technologies */}
-                                                {featuredTechs.length > 0 && (
-                                                    <div className="mb-8">
-                                                        <div className="flex items-center gap-2 mb-4">
-                                                            <Star className="w-4 h-4 text-yellow-600 fill-current" />
-                                                            <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
-                                                                Primary
-                                                                Technologies
-                                                            </h4>
-                                                        </div>
-                                                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                                                            {featuredTechs.map(
-                                                                (
-                                                                    tech,
-                                                                    index
-                                                                ) => {
-                                                                    const Icon =
-                                                                        tech.icon;
-                                                                    return (
-                                                                        <motion.div
-                                                                            key={
-                                                                                tech.name
-                                                                            }
-                                                                            initial={{
-                                                                                opacity: 0,
-                                                                                scale: 0.8,
-                                                                            }}
-                                                                            whileInView={{
-                                                                                opacity: 1,
-                                                                                scale: 1,
-                                                                            }}
-                                                                            transition={{
-                                                                                duration: 0.4,
-                                                                                delay:
-                                                                                    index *
-                                                                                    0.1,
-                                                                            }}
-                                                                            whileHover={{
-                                                                                scale: 1.05,
-                                                                                y: -5,
-                                                                            }}
-                                                                            viewport={{
-                                                                                once: true,
-                                                                            }}
-                                                                            className="group"
-                                                                        >
-                                                                            <div className="neuro-tech p-6 flex flex-col items-center justify-center gap-3 min-h-[120px] relative">
-                                                                                <div className="absolute top-2 right-2">
-                                                                                    <Star className="w-3 h-3 text-yellow-600 fill-current" />
-                                                                                </div>
-
-                                                                                <Icon
-                                                                                    className={`w-10 h-10 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
-                                                                                />
-                                                                                <span className="text-sm font-semibold text-gray-800 text-center">
-                                                                                    {
-                                                                                        tech.name
-                                                                                    }
-                                                                                </span>
-                                                                            </div>
-                                                                        </motion.div>
-                                                                    );
-                                                                }
-                                                            )}
-                                                        </div>
+                                                <div>
+                                                    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+                                                        {categoryTechs.map(
+                                                            (tech, index) => {
+                                                                const Icon =
+                                                                    tech.icon;
+                                                                return (
+                                                                    <motion.div
+                                                                        key={
+                                                                            tech.name
+                                                                        }
+                                                                        initial={{
+                                                                            opacity: 0,
+                                                                            scale: 0.8,
+                                                                        }}
+                                                                        whileInView={{
+                                                                            opacity: 1,
+                                                                            scale: 1,
+                                                                        }}
+                                                                        transition={{
+                                                                            duration: 0.4,
+                                                                            delay:
+                                                                                index *
+                                                                                0.1,
+                                                                        }}
+                                                                        whileHover={{
+                                                                            scale: 1.05,
+                                                                            y: -3,
+                                                                        }}
+                                                                        viewport={{
+                                                                            once: true,
+                                                                        }}
+                                                                        className="group"
+                                                                    >
+                                                                        <div className="neuro-tech p-4 flex flex-col items-center justify-center gap-2 min-h-[90px]">
+                                                                            <Icon
+                                                                                className={`w-6 h-6 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                                                                            />
+                                                                            <span className="text-xs font-medium text-gray-700 text-center leading-tight">
+                                                                                {
+                                                                                    tech.name
+                                                                                }
+                                                                            </span>
+                                                                        </div>
+                                                                    </motion.div>
+                                                                );
+                                                            }
+                                                        )}
                                                     </div>
-                                                )}
-
-                                                {/* Other Technologies */}
-                                                {otherTechs.length > 0 && (
-                                                    <div>
-                                                        <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">
-                                                            Additional
-                                                            Technologies
-                                                        </h4>
-                                                        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-                                                            {otherTechs.map(
-                                                                (
-                                                                    tech,
-                                                                    index
-                                                                ) => {
-                                                                    const Icon =
-                                                                        tech.icon;
-                                                                    return (
-                                                                        <motion.div
-                                                                            key={
-                                                                                tech.name
-                                                                            }
-                                                                            initial={{
-                                                                                opacity: 0,
-                                                                                scale: 0.8,
-                                                                            }}
-                                                                            whileInView={{
-                                                                                opacity: 1,
-                                                                                scale: 1,
-                                                                            }}
-                                                                            transition={{
-                                                                                duration: 0.4,
-                                                                                delay:
-                                                                                    (featuredTechs.length +
-                                                                                        index) *
-                                                                                    0.1,
-                                                                            }}
-                                                                            whileHover={{
-                                                                                scale: 1.05,
-                                                                                y: -3,
-                                                                            }}
-                                                                            viewport={{
-                                                                                once: true,
-                                                                            }}
-                                                                            className="group"
-                                                                        >
-                                                                            <div className="neuro-tech p-4 flex flex-col items-center justify-center gap-2 min-h-[90px]">
-                                                                                <Icon
-                                                                                    className={`w-6 h-6 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
-                                                                                />
-                                                                                <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                                                                                    {
-                                                                                        tech.name
-                                                                                    }
-                                                                                </span>
-                                                                            </div>
-                                                                        </motion.div>
-                                                                    );
-                                                                }
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                )}
+                                                </div>
                                             </div>
                                         </CardContent>
                                     </Card>

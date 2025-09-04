@@ -118,7 +118,10 @@ const featuredProject = {
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-20 neuro-section">
+        <section
+            id="projects"
+            className="py-20 neuro-section px-2 sm:px-4 lg:px-16"
+        >
             <div className="container mx-auto px-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

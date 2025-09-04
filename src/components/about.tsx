@@ -1,11 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Zap, Heart, Guitar, ChevronRight as ChessKnight, Printer } from "lucide-react";
+import {
+    Code,
+    Zap,
+    Heart,
+    Guitar,
+    ChevronRight as ChessKnight,
+    Printer,
+} from "lucide-react";
 
 export default function About() {
     return (
-        <section id="about" className="py-20 neuro-section">
+        <section
+            id="about"
+            className="py-20 neuro-section px-2 sm:px-4 lg:px-16"
+        >
             <div className="container mx-auto px-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -27,7 +37,8 @@ export default function About() {
                                 About Me
                             </h2>
                             <p className="text-lg text-gray-600 dark:text-gray-400">
-                                Get to know more about my journey, skills, and what drives my passion for development.
+                                Get to know more about my journey, skills, and
+                                what drives my passion for development.
                             </p>
                         </div>
                     </motion.div>
@@ -57,17 +68,23 @@ export default function About() {
                                             <strong className="text-gray-800 dark:text-gray-200">
                                                 robots
                                             </strong>
-                                            , now I build websites 🔨🤖➡️🌐. I've been freelancing for{" "}
+                                            , now I build websites 🔨🤖➡️🌐.
+                                            I've been freelancing for{" "}
                                             <strong className="text-gray-800 dark:text-gray-200">
                                                 3 years
                                             </strong>{" "}
-                                            now, building and maintaining websites and web applications
-                                            for my clients.
+                                            now, building and maintaining
+                                            websites and web applications for my
+                                            clients.
                                         </p>
                                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                            This transition from hardware to software has given me a unique 
-                                            perspective on problem-solving and systematic thinking. The precision 
-                                            required in robotics translates perfectly to writing clean, efficient code.
+                                            This transition from hardware to
+                                            software has given me a unique
+                                            perspective on problem-solving and
+                                            systematic thinking. The precision
+                                            required in robotics translates
+                                            perfectly to writing clean,
+                                            efficient code.
                                         </p>
                                     </div>
                                 </div>
@@ -94,13 +111,15 @@ export default function About() {
                                         My Go-To Framework
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                        My go-to framework for both front-end and full-stack
-                                        applications is{" "}
+                                        My go-to framework for both front-end
+                                        and full-stack applications is{" "}
                                         <strong className="text-gray-800 dark:text-gray-200">
                                             Next.js
                                         </strong>
-                                        . It allows for rapid testing and iteration, making it 
-                                        perfect for exploring new concepts and refining them along the way.
+                                        . It allows for rapid testing and
+                                        iteration, making it perfect for
+                                        exploring new concepts and refining them
+                                        along the way.
                                     </p>
                                 </div>
                             </div>
@@ -128,9 +147,13 @@ export default function About() {
                                             Beyond the Code
                                         </h3>
                                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg mb-6">
-                                            These hobbies keep me creative and help me approach coding challenges from different angles. 
-                                            Whether it's the precision required in 3D modeling or the strategic thinking in chess, 
-                                            these activities complement my development skills.
+                                            These hobbies keep me creative and
+                                            help me approach coding challenges
+                                            from different angles. Whether it's
+                                            the precision required in 3D
+                                            modeling or the strategic thinking
+                                            in chess, these activities
+                                            complement my development skills.
                                         </p>
                                     </div>
                                 </div>
@@ -140,48 +163,70 @@ export default function About() {
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0.9 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
-                                        transition={{ duration: 0.4, delay: 0.8 }}
+                                        transition={{
+                                            duration: 0.4,
+                                            delay: 0.8,
+                                        }}
                                         viewport={{ once: true }}
                                         className="neuro-inset p-6 text-center group hover:scale-105 transition-transform duration-300"
                                     >
                                         <div className="neuro-card p-3 w-fit mx-auto mb-4 group-hover:neuro-accent-blue transition-all duration-300">
                                             <Printer className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors duration-300" />
                                         </div>
-                                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">3D Printing & Modeling</h4>
+                                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                                            3D Printing & Modeling
+                                        </h4>
                                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                                            Creating physical objects from digital designs, bridging the gap between virtual and real.
+                                            Creating physical objects from
+                                            digital designs, bridging the gap
+                                            between virtual and real.
                                         </p>
                                     </motion.div>
 
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0.9 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
-                                        transition={{ duration: 0.4, delay: 1.0 }}
+                                        transition={{
+                                            duration: 0.4,
+                                            delay: 1.0,
+                                        }}
                                         viewport={{ once: true }}
                                         className="neuro-inset p-6 text-center group hover:scale-105 transition-transform duration-300"
                                     >
                                         <div className="neuro-card p-3 w-fit mx-auto mb-4 group-hover:neuro-accent-purple transition-all duration-300">
                                             <Guitar className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors duration-300" />
                                         </div>
-                                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Fingerstyle Guitar 🎸</h4>
+                                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                                            Fingerstyle Guitar 🎸
+                                        </h4>
                                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                                            Playing acoustic guitar with fingerstyle techniques, creating melodies and harmonies simultaneously.
+                                            Playing acoustic guitar with
+                                            fingerstyle techniques, creating
+                                            melodies and harmonies
+                                            simultaneously.
                                         </p>
                                     </motion.div>
 
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0.9 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
-                                        transition={{ duration: 0.4, delay: 1.2 }}
+                                        transition={{
+                                            duration: 0.4,
+                                            delay: 1.2,
+                                        }}
                                         viewport={{ once: true }}
                                         className="neuro-inset p-6 text-center group hover:scale-105 transition-transform duration-300"
                                     >
                                         <div className="neuro-card p-3 w-fit mx-auto mb-4 group-hover:neuro-accent-blue transition-all duration-300">
                                             <ChessKnight className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors duration-300" />
                                         </div>
-                                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Online Chess ♟️</h4>
+                                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                                            Online Chess ♟️
+                                        </h4>
                                         <p className="text-sm text-gray-600 dark:text-gray-400">
-                                            Strategic thinking and pattern recognition that directly translates to problem-solving in code.
+                                            Strategic thinking and pattern
+                                            recognition that directly translates
+                                            to problem-solving in code.
                                         </p>
                                     </motion.div>
                                 </div>
